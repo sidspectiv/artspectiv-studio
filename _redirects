@@ -1,0 +1,3 @@
+# Cloudflare Pages — static site (no SPA catch-all for the whole site).
+# Existing files under /assets/ are served as-is when present in the deploy output.
+# Do not add "/* /index.html 200" here; that breaks /assets/*.jpg when files are missing.

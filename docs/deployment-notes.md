@@ -43,6 +43,24 @@ Build output directory: /
 4. Upload to `assets/` using the filenames in `docs/image-shot-list.md`.
 5. Commit and wait for Cloudflare to redeploy.
 
+**Placeholder generation (dev only):** `powershell -File scripts/generate-placeholder-assets.ps1` — replace output with real JPGs before sharing with leads.
+
+**Asset routing:** Do not enable a site-wide SPA rule (`/* → /index.html`) on Cloudflare Pages. Missing `/assets/*.jpg` must 404, not return HTML. The repo includes `_redirects` without a catch-all.
+
+**Verify after deploy:**
+
+```bash
+curl -sI https://artspectivstudio.co.uk/assets/rita-hero.jpg
+```
+
+Expect `Content-Type: image/jpeg` (not `text/html`).
+
+## Enquiry form (Formspree)
+
+1. Create a form at [formspree.io](https://formspree.io) for `hello@artspectivstudio.co.uk`.
+2. Set `assets/site-config.json` → `"formAction": "https://formspree.io/f/YOUR_ID"`.
+3. Commit and redeploy. The `#contact` form enables submit; until then, visitors use the email link.
+
 ## Custom domain later
 
 Once the site is ready, connect a custom domain such as:

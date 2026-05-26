@@ -12,26 +12,45 @@ assets/
 
 ## Required image filenames
 
-The current `index.html` expects these filenames. Replace the placeholder files with real compressed images using the same names.
+The current `index.html` expects these filenames. Replace placeholder files with real compressed images using the same names.
+
+### Meta and brand
+
+```text
+og-cover.jpg
+favicon.png
+apple-touch-icon.png
+```
+
+### Hero and case study (Rita's Café)
 
 ```text
 rita-hero.jpg
-food-01.jpg
-bar-01.jpg
-interior-01.jpg
-detail-01.jpg
-people-01.jpg
 rita-01.jpg
 rita-02.jpg
 rita-03.jpg
-portfolio-food-01.jpg
-portfolio-drinks-01.jpg
-portfolio-interior-01.jpg
-portfolio-food-02.jpg
-portfolio-people-01.jpg
-portfolio-drinks-02.jpg
-portfolio-interior-02.jpg
+rita-04.jpg
+rita-05.jpg
 ```
+
+### Portfolio grid
+
+```text
+portfolio-food-01.jpg
+portfolio-food-02.jpg
+portfolio-drinks-01.jpg
+portfolio-drinks-02.jpg
+portfolio-interior-01.jpg
+portfolio-interior-02.jpg
+portfolio-people-01.jpg
+portfolio-people-02.jpg
+portfolio-detail-01.jpg
+portfolio-detail-02.jpg
+portfolio-beauty-01.jpg
+portfolio-beauty-02.jpg
+```
+
+**Canonical source:** `index.html` `src="assets/..."` references. If you add or remove portfolio images, update this list and record a Decision Log entry in `AGENTS.md`.
 
 ## Selection rule
 

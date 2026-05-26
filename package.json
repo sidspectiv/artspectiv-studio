@@ -1,0 +1,11 @@
+{
+  "name": "artspectiv-studio",
+  "private": true,
+  "description": "Static site for Artspectiv Studio — agent harness scripts only (no runtime deps)",
+  "scripts": {
+    "verify:agent-harness": "node .cursor/scripts/verify-agent-harness.mjs",
+    "audit:skills": "node .cursor/scripts/audit-skills.mjs",
+    "test:hooks": "node .cursor/hooks/tests/session-start.test.mjs",
+    "generate:placeholders": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/generate-placeholder-assets.ps1"
+  }
+}
