@@ -1,99 +1,71 @@
 # Codex Brief: Artspectiv Studio
 
 ## Role
-
-You are helping maintain a premium static portfolio website for **Artspectiv Studio**, a North London photo and reel content studio.
+You are maintaining a premium static website for **Artspectiv Studio**, a New Barnet and North London content studio.
 
 ## Business positioning
+Artspectiv Studio sells productised visual content packages for cafés, brunch spots, restaurants, bars, salons, nail studios, beauty clinics and local lifestyle brands, and can also manage posting rhythm across social platforms.
 
-Artspectiv Studio creates productised content packages for:
+Core promise:
+> Monthly visual content for local businesses that need their online presence to match the quality of the real-life experience.
 
-- cafés
-- brunch spots
-- restaurants
-- bars
-- salons
-- nail studios
-- beauty clinics
-- local lifestyle brands
+## Conversion objective
+Primary goal: get business owners to request a content shoot quickly.
+Secondary goal: build trust instantly through local proof, specific deliverables, clear terms, and practical posting support.
 
-The core promise:
+Primary CTA copy:
+> Request a content shoot
 
-> One shoot turned into a month of premium photo and reel content for Instagram, Google and booking platforms.
+## Current offer and pricing
+- Starter Content Shoot — from £445
+- Monthly Content Bank — from £945
+- Campaign Content Day — from £1,595
 
-## Brand feel
+Do not reintroduce legacy pricing (£225/£695/£1,095) unless explicitly requested.
 
-Keep the site:
-
-- dark editorial
-- warm
-- premium
-- hospitality-forward
-- minimal but rich
-- cinematic without being slow
-- clear enough for small business owners to buy from
+## Brand and copy guardrails
+Keep the experience dark editorial, premium, warm, and plain English.
 
 Avoid:
+- generic freelancer language
+- corporate jargon
+- fake growth claims
+- cluttered portfolio-first flow
 
-- generic freelancer portfolio vibes
-- childish gradients
-- over-complicated animations
-- jargon
-- cluttered galleries
-- random personal photography that does not support the sales offer
-
-## Technical rules
-
+## Technical guardrails
 - Static site only
-- Keep `index.html` as the main entry point
-- No build step unless explicitly requested
-- No heavy frameworks
+- Keep `index.html` as primary entry
+- No heavy framework
 - Vanilla HTML/CSS/JS preferred
+- Preserve Cloudflare Pages compatibility
 - Keep performance high
-- Keep mobile layout polished
-- All images should live in `assets/`
+- All images under `assets/`
 
-## Current site sections
+## Harness engineering implementation rules
+Use a repeatable delivery harness on each iteration:
 
-- Hero
-- Proof strip
-- Featured work
-- Problem section
-- Rita’s Café case study
-- Portfolio grid
-- Services/packages
-- Process
-- Testimonial placeholder
-- Enquiry/contact section
+1. **Prompt harness**
+   - Restate audience, conversion goal, and non-negotiables.
+2. **Build harness**
+   - Implement in slices: structure -> offer copy -> style -> accessibility polish.
+3. **QA harness**
+   - Check mobile first (small, tablet, desktop), CTA visibility, proof clarity, package scanability, fallback behaviour, and keyboard focus states.
+4. **Handoff harness**
+   - Summarise what changed, what remains, and what should be replaced later (for example mailto with Tally/Formspree).
 
-## Copy tone
+## Required page narrative order
+1. Hero
+2. Credibility strip
+3. Problem framing
+4. Offers
+5. Rita's Café case study
+6. Curated portfolio
+7. Process
+8. Terms
+9. FAQ
+10. Final CTA
 
-Plain English. Premium but not pretentious. Confident but not cringe.
-
-Good example:
-
-> Your business probably looks better in real life than it does online.
-
-Bad example:
-
-> We empower brands through synergistic content solutions.
-
-Absolutely not. Burn it with fire.
-
-## Pricing logic
-
-Current visible offers:
-
-- Trial Shoot: from £225
-- Monthly Content Bank: from £695
-- Campaign Day: from £1,095
-
-Do not lower pricing unless explicitly asked.
-
-## Most important conversion goal
-
-The primary CTA is:
-
-> Request a trial shoot
-
-Do not make the site feel like a passive gallery. It should feel like a productised service experience.
+## Tone checks before shipping
+- Is it clear, human, and local?
+- Would a busy owner understand the offer in under 10 seconds?
+- Is the next step obvious on mobile without scrolling too far?

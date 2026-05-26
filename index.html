@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Artspectiv Studio | Premium Content Shoots in North London</title>
-  <meta name="description" content="Artspectiv Studio creates premium photo and reel content for cafés, bars, salons and local brands across North London. One shoot, one content bank, delivered in 5 to 7 business days.">
+  <meta name="description" content="Artspectiv Studio creates premium photo, reel and posting support content for cafés, bars, salons and local brands across North London. One shoot, one content bank, delivered in 5 to 7 business days.">
   <meta property="og:title" content="Artspectiv Studio | Premium Content Shoots in North London">
-  <meta property="og:description" content="Monthly visual content for local businesses that need their online presence to match the quality of the real-life experience.">
+  <meta property="og:description" content="Monthly visual content and posting support for local businesses that need their online presence to match the quality of the real-life experience.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://artspectivstudio.co.uk/">
   <meta property="og:image" content="assets/og-cover.jpg">
@@ -17,134 +17,95 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {--bg:#0f0d0b;--panel:#17120e;--panel-soft:#211911;--text:#f4e9db;--muted:#b9aa98;--gold:#c8a96a;--line:rgba(244,233,219,.16);--max:1160px;--r:26px}
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at left top,rgba(200,169,106,.17),transparent 32rem),radial-gradient(circle at right top,rgba(89,58,32,.22),transparent 38rem),var(--bg);color:var(--text);line-height:1.6}
-    a{text-decoration:none;color:inherit} img{width:100%;height:100%;object-fit:cover;display:block}
-    .wrap{width:min(var(--max),calc(100% - 2rem));margin:auto} section{padding:5.5rem 0}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 1.2rem;border-radius:999px;border:1px solid var(--line);font-weight:700}
+    :root{--bg:#0f0d0b;--panel:#17120e;--panel-soft:#211911;--text:#f4e9db;--muted:#c9baab;--gold:#c8a96a;--line:rgba(244,233,219,.16);--max:1160px;--r:22px}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at left top,rgba(200,169,106,.16),transparent 30rem),radial-gradient(circle at right top,rgba(89,58,32,.22),transparent 38rem),var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}img{width:100%;height:100%;object-fit:cover;display:block}
+    .wrap{width:min(var(--max),calc(100% - 1.5rem));margin:auto}
+    section{padding:3.75rem 0}.stack>*+*{margin-top:1rem}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:.96;letter-spacing:-.03em;font-weight:600}
+    h1{font-size:clamp(2.5rem,10vw,4.7rem);max-width:15ch}h2{font-size:clamp(2rem,8vw,3.6rem);max-width:18ch}h3{font-size:1.7rem}
+    .intro{color:var(--muted);max-width:64ch}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.2rem 1.1rem;border-radius:999px;border:1px solid var(--line);font-weight:700;transition:.2s}
     .btn.primary{background:var(--gold);border-color:var(--gold);color:#18120d}
-    header{position:sticky;top:0;z-index:30;background:rgba(15,13,11,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    nav{height:72px;display:flex;justify-content:space-between;align-items:center;gap:1rem}.brand{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-    .links{display:flex;gap:1.2rem;color:var(--muted);font-size:.9rem}
-    h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:.95;letter-spacing:-.03em;font-weight:600} h1{font-size:clamp(3rem,9vw,7rem);max-width:16ch}
-    h2{font-size:clamp(2.2rem,6vw,4.2rem);max-width:18ch} h3{font-size:2rem}
-    .intro{color:var(--muted);max-width:60ch}
-    .hero{min-height:calc(100vh - 72px);display:grid;align-items:end;padding:4rem 0 2.5rem}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1.6rem;align-items:end}
-    .hero-media{border:1px solid var(--line);border-radius:2rem;min-height:34rem;overflow:hidden;background:linear-gradient(135deg,rgba(200,169,106,.2),rgba(63,45,32,.88))}
-    .cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.4rem 0 .9rem}.micro{color:var(--muted);font-size:.86rem}
-    .strip{padding:1rem 0;border-block:1px solid var(--line);text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;color:var(--muted)}
-    .strip .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
-    .problem-grid,.service-grid,.process-grid,.terms-grid,.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
-    .card{border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.015));padding:1.4rem}
-    .service{background:var(--panel);display:flex;flex-direction:column;justify-content:space-between}.service .price{font-size:2.8rem;font-family:"Cormorant Garamond",serif;margin:.5rem 0}
-    .service ul{list-style:none;display:grid;gap:.45rem;color:var(--muted)} .service li::before{content:"• ";color:var(--gold)}
-    .case{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.case-copy{padding:1.6rem;border:1px solid var(--line);background:var(--panel-soft);border-radius:var(--r)}
-    .testimonial{margin-top:1rem;padding:1rem;border:1px dashed rgba(200,169,106,.6);border-radius:14px;color:#d8c2a1;background:rgba(200,169,106,.08)}
-    .portfolio-group{margin-top:2rem}.portfolio-group h3{font-size:1.7rem;margin-bottom:.65rem}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}.ph{border:1px solid var(--line);border-radius:16px;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(135deg,rgba(200,169,106,.2),rgba(62,47,36,.85))}
-    details{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);padding:.9rem 1rem} details summary{cursor:pointer;font-weight:600}
-    .final-cta{padding:3rem;border:1px solid var(--line);border-radius:2rem;background:linear-gradient(145deg,rgba(200,169,106,.14),rgba(255,255,255,.02));text-align:center}
+    .btn:hover{transform:translateY(-1px)}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+    .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}
+
+    header{position:sticky;top:0;z-index:30;background:rgba(15,13,11,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.6rem 0}
+    .brand{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+    .links{display:none;color:var(--muted);font-size:.9rem;gap:1rem}
+
+    .hero{min-height:calc(100vh - 66px);display:grid;align-items:end;padding:2.8rem 0 2rem}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;align-items:end}
+    .hero-media{border:1px solid var(--line);border-radius:1.35rem;min-height:22rem;overflow:hidden;background:linear-gradient(135deg,rgba(200,169,106,.2),rgba(63,45,32,.88))}
+    .hero-fallback{padding:1rem;color:var(--muted);font-size:.9rem}
+    .cta-row{display:flex;flex-direction:column;gap:.65rem;margin:1.2rem 0 .9rem}.cta-row .btn{width:100%}
+    .micro{color:var(--muted);font-size:.88rem}
+
+    .strip{padding:.9rem 0;border-block:1px solid var(--line);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;color:var(--muted)}
+    .strip .wrap{display:grid;grid-template-columns:1fr;gap:.45rem}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:.9rem;margin-top:1.2rem}
+    .card{border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.015));padding:1.15rem}
+    .service{background:var(--panel);display:flex;flex-direction:column;justify-content:space-between;gap:1rem}
+    .price{font-size:2.5rem;font-family:"Cormorant Garamond",serif;line-height:1}
+    .meta-list{list-style:none;display:grid;gap:.45rem;margin-top:.8rem;color:var(--muted)}
+    .meta-list li strong{color:var(--text)}
+
+    .case-copy{padding:1.35rem;border:1px solid var(--line);background:var(--panel-soft);border-radius:var(--r)}
+    .testimonial{margin-top:1rem;padding:1rem;border:1px dashed rgba(200,169,106,.62);border-radius:12px;color:#e0ccae;background:rgba(200,169,106,.08)}
+    .proof{margin-top:1rem;color:var(--muted);font-size:.95rem}
+    .trust-note{margin-top:1rem;padding:.9rem;border-radius:12px;background:rgba(200,169,106,.08);font-size:.92rem}
+
+    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.65rem}
+    .portfolio-group{margin-top:1.6rem}.portfolio-group h3{font-size:1.5rem;margin-bottom:.55rem}
+    .ph{border:1px solid var(--line);border-radius:14px;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(135deg,rgba(200,169,106,.2),rgba(62,47,36,.85))}
+
+    details{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);padding:.85rem 1rem}
+    details+details{margin-top:.7rem}summary{cursor:pointer;font-weight:600}
+    .final-cta{padding:2rem 1.15rem;border:1px solid var(--line);border-radius:1.3rem;background:linear-gradient(145deg,rgba(200,169,106,.14),rgba(255,255,255,.02));text-align:center}
     .contact-note{margin-top:.8rem;color:var(--muted);font-size:.9rem}
-    footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
-    @media (max-width:980px){.links{display:none}.hero-grid,.case{grid-template-columns:1fr}.problem-grid,.service-grid,.process-grid,.terms-grid{grid-template-columns:1fr}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}}
+    .sticky-cta{position:fixed;left:.75rem;right:.75rem;bottom:.75rem;z-index:40}
+    .sticky-cta .btn{width:100%;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+    footer{padding:1.8rem 0 5.8rem;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+
+    @media (min-width:760px){
+      section{padding:5rem 0}.cta-row{flex-direction:row}.cta-row .btn{width:auto}.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.portfolio-grid{grid-template-columns:repeat(4,1fr)}
+      .sticky-cta{display:none}footer{padding-bottom:1.8rem}
+    }
+    @media (min-width:1024px){
+      .links{display:flex}.hero-grid{grid-template-columns:1.03fr .97fr}.hero-media{min-height:34rem}.strip .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-grid{grid-template-columns:repeat(5,1fr)}
+    }
   </style>
 </head>
 <body>
-<header>
-  <nav class="wrap">
-    <a class="brand" href="#top">Artspectiv Studio · New Barnet</a>
-    <div class="links"><a href="#offers">Packages</a><a href="#case-study">Rita's Café</a><a href="#portfolio">Portfolio</a><a href="#faq">FAQ</a></div>
-    <a class="btn primary" href="#contact">Request a content shoot</a>
-  </nav>
-</header>
+<header><nav class="wrap"><a class="brand" href="#top">Artspectiv Studio · New Barnet</a><div class="links"><a href="#offers">Packages</a><a href="#case-study">Rita's Café</a><a href="#portfolio">Portfolio</a><a href="#faq">FAQ</a></div><a class="btn primary" href="#contact">Check availability</a></nav></header>
 <main id="top">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <p style="color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.75rem">Premium local content studio</p>
-        <h1>Your business looks better in real life. Let's make the internet catch up.</h1>
-        <p class="intro">Premium photo and reel content for cafés, bars, salons and local brands across North London.</p>
-        <div class="cta-row"><a class="btn primary" href="#contact">Request a content shoot</a><a class="btn" href="#portfolio">View the work</a></div>
-        <p class="micro">Based in New Barnet · Built for Instagram, Google and booking platforms · Delivered in 5 to 7 business days</p>
-      </div>
-      <figure class="hero-media">
-        <img src="assets/rita-hero.jpg" alt="Editorial style brunch and coffee content" onerror="this.style.display='none';this.parentNode.setAttribute('aria-label','Placeholder visual for Artspectiv Studio content');">
-      </figure>
-    </div>
-  </section>
+<section class="hero"><div class="wrap hero-grid"><div class="stack"><p class="kicker">Premium local content studio</p><h1>Your business looks better in real life. Let's make the internet catch up.</h1><p class="intro">Premium photo, reel and social posting support for cafés, bars, salons and local brands across North London.</p><div class="cta-row"><a class="btn primary" href="#contact">Request a content shoot</a><a class="btn" href="#portfolio">View the work</a></div><p class="micro">Based in New Barnet · Built for Instagram, Google and booking platforms · Content delivered in 5 to 7 business days</p></div><figure class="hero-media"><img src="assets/rita-hero.jpg" alt="Editorial style brunch and coffee content" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<figcaption class=\'hero-fallback\'>Editorial placeholder visual. Replace with your best hero image.</figcaption>');"></figure></div></section>
 
-  <div class="strip"><div class="wrap"><span>Rita's Café content</span><span>Food, drink, salon and local business visuals</span><span>One shoot to one month of usable content</span><span>North London based</span></div></div>
+<div class="strip"><div class="wrap"><span>Rita's Café content</span><span>Food, drink, salon and local business visuals</span><span>One shoot to one month of usable content and posting rhythm</span><span>North London based</span></div></div>
 
-  <section>
-    <div class="wrap">
-      <h2>Your venue has the atmosphere. Your feed just needs to prove it.</h2>
-      <div class="problem-grid">
-        <article class="card"><h3>Your Instagram looks inconsistent.</h3><p class="intro">Strong service can still look patchy when content is done between shifts and stock runs.</p></article>
-        <article class="card"><h3>Your Google photos are old or flat.</h3><p class="intro">First impressions get weaker when search photos no longer reflect what people see in person.</p></article>
-        <article class="card"><h3>Your best dishes or services are not being sold visually.</h3><p class="intro">Appetite, trust and booking confidence are lost when key moments are missing from your content.</p></article>
-      </div>
-    </div>
-  </section>
+<section><div class="wrap"><h2>Your venue has the atmosphere. Your feed just needs to prove it.</h2><div class="grid three"><article class="card"><h3>Your Instagram looks inconsistent.</h3><p class="intro">Strong service can still look patchy when content is created between shifts and stock runs.</p></article><article class="card"><h3>Your Google photos are old or flat.</h3><p class="intro">First impressions get weaker when search photos no longer match what customers see in person.</p></article><article class="card"><h3>Your best dishes or services are not being sold visually.</h3><p class="intro">Appetite, trust and booking confidence are lost when key moments are missing from your content.</p></article></div></div></section>
 
-  <section id="offers">
-    <div class="wrap">
-      <h2>Productised packages built for fast decisions.</h2>
-      <p class="intro">Starter proves the fit. Monthly builds your content engine. Campaign adds focused pushes for launches and seasonal moments.</p>
-      <div class="service-grid">
-        <article class="card service"><div><h3>Starter Content Shoot</h3><p class="price">£445</p><p class="intro">Deliverables: 12 edited images, 2 short reels, caption prompts. Turnaround: 5 to 7 business days. Best for: first shoot and proof of fit.</p></div><a class="btn" href="#contact">Book starter shoot</a></article>
-        <article class="card service"><div><h3>Monthly Content Bank</h3><p class="price">£945</p><p class="intro">Deliverables: 24 edited images, 4 reels, Google-ready set, monthly content rhythm. Turnaround: 5 to 7 business days after each shoot. Best for: businesses posting weekly.</p></div><a class="btn primary" href="#contact">Build monthly content</a></article>
-        <article class="card service"><div><h3>Campaign Content Day</h3><p class="price">£1,595</p><p class="intro">Deliverables: 40 edited images, 8 reels, campaign shot list and launch content set. Turnaround: 7 business days. Best for: launches, menu updates and events.</p></div><a class="btn" href="#contact">Plan a campaign day</a></article>
-      </div>
-    </div>
-  </section>
+<section id="offers"><div class="wrap"><h2>Productised packages built for fast decisions.</h2><p class="intro">Starter proves the fit. Monthly builds your content engine. Campaign adds focused pushes for launches and seasonal moments.</p><div class="grid three"><article class="card service"><div><h3>Starter Content Shoot</h3><p class="price">from £445</p><ul class="meta-list"><li><strong>Deliverables:</strong> 12 edited images, 2 short reels, caption prompts</li><li><strong>Posting support:</strong> 1 week posting plan and upload checklist</li><li><strong>Turnaround:</strong> 5 to 7 business days</li><li><strong>Best for:</strong> first shoot and proof of fit</li></ul></div><a class="btn" href="#contact">Book starter shoot</a></article><article class="card service"><div><h3>Monthly Content Bank</h3><p class="price">from £945</p><ul class="meta-list"><li><strong>Deliverables:</strong> 24 edited images, 4 reels, Google-ready set</li><li><strong>Posting support:</strong> monthly posting calendar and scheduled upload support</li><li><strong>Turnaround:</strong> 5 to 7 business days after each shoot</li><li><strong>Best for:</strong> businesses posting weekly</li></ul></div><a class="btn primary" href="#contact">Build monthly content</a></article><article class="card service"><div><h3>Campaign Content Day</h3><p class="price">from £1,595</p><ul class="meta-list"><li><strong>Deliverables:</strong> 40 edited images, 8 reels, campaign shot list</li><li><strong>Posting support:</strong> campaign rollout plan and launch-week posting support</li><li><strong>Turnaround:</strong> 7 business days</li><li><strong>Best for:</strong> launches, menu updates and events</li></ul></div><a class="btn" href="#contact">Plan a campaign day</a></article></div></div></section>
 
-  <section id="case-study">
-    <div class="wrap case">
-      <article class="case-copy">
-        <h2>Case study: Rita's Café</h2>
-        <p class="intro"><strong>Client:</strong> Rita's Café. <strong>Goal:</strong> make the café feel active, warm and visually consistent online.</p>
-        <p class="intro"><strong>Output:</strong> brunch photography, reels, captions and a practical content rhythm.</p>
-        <p class="intro"><strong>Use:</strong> Instagram, Google Business Profile and outreach proof.</p>
-        <p class="testimonial"><strong>Testimonial placeholder:</strong> “Replace with Rita's Café quote”.</p>
-      </article>
-      <div class="portfolio-grid">
-        <figure class="ph"><img src="assets/rita-01.jpg" alt="Rita's Café brunch plate" onerror="this.style.display='none'"></figure>
-        <figure class="ph"><img src="assets/rita-02.jpg" alt="Rita's Café coffee and pastry" onerror="this.style.display='none'"></figure>
-        <figure class="ph"><img src="assets/rita-03.jpg" alt="Rita's Café interior ambience" onerror="this.style.display='none'"></figure>
-        <figure class="ph"><img src="assets/rita-04.jpg" alt="Rita's Café service moment" onerror="this.style.display='none'"></figure>
-        <figure class="ph"><img src="assets/rita-05.jpg" alt="Rita's Café detail texture" onerror="this.style.display='none'"></figure>
-      </div>
-    </div>
-  </section>
+<section id="case-study"><div class="wrap grid" style="margin-top:0"><article class="case-copy"><h2>Case study: Rita's Café</h2><p class="intro"><strong>Client:</strong> Rita's Café. <strong>Goal:</strong> make the café feel active, warm and visually consistent online.</p><p class="intro"><strong>Output:</strong> brunch photography, reels, captions, posting prompts and a practical content rhythm.</p><p class="intro"><strong>Use:</strong> Instagram, Google Business Profile and outreach proof.</p><p class="proof"><strong>Proof stack:</strong> Rita's Café · artspectiv · plateddrama / plateddramaaa</p><p class="testimonial"><strong>Testimonial placeholder:</strong> “Replace with Rita's Café quote”.</p><p class="trust-note"><strong>Booking confidence:</strong> clear shot plan before shoot day, one light revision round, and delivery timeline confirmed in writing.</p></article><div class="portfolio-grid"><figure class="ph"><img src="assets/rita-01.jpg" alt="Rita's Café brunch plate" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/rita-02.jpg" alt="Rita's Café coffee and pastry" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/rita-03.jpg" alt="Rita's Café interior ambience" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/rita-04.jpg" alt="Rita's Café service moment" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/rita-05.jpg" alt="Rita's Café detail texture" onerror="this.style.display='none'"></figure></div></div></section>
 
-  <section id="portfolio"><div class="wrap">
-    <h2>Curated portfolio</h2>
-    <div class="portfolio-group"><h3>Food and brunch</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-food-01.jpg" alt="Food and brunch visual" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-food-02.jpg" alt="Food and brunch texture" onerror="this.style.display='none'"></figure></div></div>
-    <div class="portfolio-group"><h3>Bars and drinks</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-drinks-01.jpg" alt="Bar and drink visual" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-drinks-02.jpg" alt="Cocktail and pour detail" onerror="this.style.display='none'"></figure></div></div>
-    <div class="portfolio-group"><h3>Interiors and ambience</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-interior-01.jpg" alt="Interior ambience" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-interior-02.jpg" alt="Interior styling" onerror="this.style.display='none'"></figure></div></div>
-    <div class="portfolio-group"><h3>People and service</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-people-01.jpg" alt="People and service" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-people-02.jpg" alt="Service detail" onerror="this.style.display='none'"></figure></div></div>
-    <div class="portfolio-group"><h3>Details and texture</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-detail-01.jpg" alt="Detail and texture shot" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-detail-02.jpg" alt="Close detail visual" onerror="this.style.display='none'"></figure></div></div>
-  </div></section>
+<section id="portfolio"><div class="wrap"><h2>Curated portfolio</h2><div class="portfolio-group"><h3>Food and brunch</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-food-01.jpg" alt="Food and brunch visual" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-food-02.jpg" alt="Food and brunch texture" onerror="this.style.display='none'"></figure></div></div><div class="portfolio-group"><h3>Bars and drinks</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-drinks-01.jpg" alt="Bar and drink visual" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-drinks-02.jpg" alt="Cocktail and pour detail" onerror="this.style.display='none'"></figure></div></div><div class="portfolio-group"><h3>Interiors and ambience</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-interior-01.jpg" alt="Interior ambience" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-interior-02.jpg" alt="Interior styling" onerror="this.style.display='none'"></figure></div></div><div class="portfolio-group"><h3>People and service</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-people-01.jpg" alt="People and service" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-people-02.jpg" alt="Service detail" onerror="this.style.display='none'"></figure></div></div><div class="portfolio-group"><h3>Details and texture</h3><div class="portfolio-grid"><figure class="ph"><img src="assets/portfolio-detail-01.jpg" alt="Detail and texture shot" onerror="this.style.display='none'"></figure><figure class="ph"><img src="assets/portfolio-detail-02.jpg" alt="Close detail visual" onerror="this.style.display='none'"></figure></div></div></div></section>
 
-  <section><div class="wrap"><h2>Low effort process for busy owners.</h2><div class="process-grid"><article class="card"><h3>Plan</h3><p class="intro">We pick your content pillars and shot priorities before shoot day.</p></article><article class="card"><h3>Shoot</h3><p class="intro">One focused session planned around quieter business hours.</p></article><article class="card"><h3>Package</h3><p class="intro">Edited images, reels and prompts, ready to use.</p></article></div><p class="intro" style="margin-top:1rem">Use across Instagram, Google and booking platforms.</p></div></section>
+<section><div class="wrap"><h2>Low effort process for busy owners.</h2><div class="grid three"><article class="card"><h3>Plan</h3><p class="intro">We pick your content pillars and shot priorities before shoot day.</p></article><article class="card"><h3>Shoot</h3><p class="intro">One focused session planned around quieter business hours.</p></article><article class="card"><h3>Package</h3><p class="intro">Edited images, reels, prompts and posting guidance, ready for Instagram, Google and booking platforms.</p></article></div></div></section>
 
-  <section><div class="wrap"><h2>What is included and what is not.</h2><div class="terms-grid"><article class="card"><h3>Included</h3><ul><li>Planned shoot</li><li>Agreed deliverables</li><li>One light revision round</li><li>Clear turnaround</li></ul></article><article class="card"><h3>Not included</h3><ul><li>Daily posting</li><li>Inbox management</li><li>Paid ads</li><li>Unlimited revisions</li></ul></article><article class="card"><h3>Payment terms</h3><p class="intro">Starter: 50% deposit, 50% before delivery. Monthly retainers: paid monthly in advance.</p></article></div></div></section>
+<section><div class="wrap"><h2>What is included and what is not.</h2><div class="grid three"><article class="card"><h3>Included</h3><ul class="meta-list"><li>Planned shoot</li><li>Agreed deliverables</li><li>One light revision round</li><li>Clear turnaround</li></ul></article><article class="card"><h3>Not included</h3><ul class="meta-list"><li>Daily community management</li><li>Full-time inbox management</li><li>Paid ads</li><li>Unlimited revisions</li></ul></article><article class="card"><h3>Payment terms</h3><p class="intro">Starter: 50% deposit, 50% before delivery. Monthly retainers: paid monthly in advance. Posting support scope is agreed in advance.</p></article></div></div></section>
 
-  <section id="faq"><div class="wrap"><h2>FAQ</h2><div class="faq-grid">
-    <details open><summary>Do you only work with cafés?</summary><p class="intro">No. I also work with restaurants, bars, salons, nail studios, beauty clinics and local lifestyle brands.</p></details>
-    <details><summary>Can you shoot during quiet business hours?</summary><p class="intro">Yes. Sessions are planned around your quieter windows to reduce disruption.</p></details>
-    <details><summary>Do you manage posting too?</summary><p class="intro">No. I focus on planning, shooting and editing. Posting support can be scoped separately later.</p></details>
-    <details><summary>How fast do I get the content?</summary><p class="intro">Most projects are delivered in 5 to 7 business days after the shoot.</p></details>
-    <details><summary>Can I start with one shoot?</summary><p class="intro">Yes. The Starter Content Shoot is designed for that.</p></details>
-    <details><summary>Do you cover salons and beauty clinics?</summary><p class="intro">Yes. Trust-led visuals for treatments, spaces, details and service are a core offer.</p></details>
-    <details><summary>What areas do you cover?</summary><p class="intro">Based in New Barnet, serving North London and nearby areas.</p></details>
-  </div></div></section>
+<section id="faq"><div class="wrap"><h2>FAQ</h2><details open><summary>Do you only work with cafés?</summary><p class="intro">No. I also work with restaurants, bars, salons, nail studios, beauty clinics and local lifestyle brands.</p></details><details><summary>Can you shoot during quiet business hours?</summary><p class="intro">Yes. Sessions are planned around your quieter windows to reduce disruption.</p></details><details><summary>Do you manage posting too?</summary><p class="intro">Yes. I can support posting rhythm, scheduling guidance and platform-ready content rollout as part of the right package.</p></details><details><summary>How fast do I get the content?</summary><p class="intro">Most projects are delivered in 5 to 7 business days after the shoot.</p></details><details><summary>Can I start with one shoot?</summary><p class="intro">Yes. The Starter Content Shoot is designed for that.</p></details><details><summary>Do you cover salons and beauty clinics?</summary><p class="intro">Yes. Trust-led visuals for treatments, spaces, details and service are a core offer.</p></details><details><summary>What areas do you cover?</summary><p class="intro">Based in New Barnet, serving North London and nearby areas.</p></details></div></section>
 
-  <section id="contact"><div class="wrap final-cta"><h2>Want your business to look better online within one shoot?</h2><p class="intro" style="margin:1rem auto">Send your business name, Instagram handle and what you want to improve.</p><p><a class="btn primary" href="mailto:hello@artspectivstudio.co.uk?subject=Request%20a%20content%20shoot">Request a content shoot</a></p><p class="contact-note">Form note: mailto is live. Replace with Tally or Formspree URL if preferred.</p></div></section>
+<section id="contact"><div class="wrap final-cta"><p class="kicker">Next step</p><h2>Want your business to look better online within one shoot?</h2><p class="intro" style="margin:1rem auto">Send your business name, Instagram handle, and whether you need content only or content plus posting support.</p><p><a class="btn primary" href="mailto:hello@artspectivstudio.co.uk?subject=Request%20a%20content%20shoot">Request a content shoot</a></p><p class="contact-note">Mailto is live. Replace with Tally or Formspree URL to reduce form drop-off.</p></div></section>
 </main>
+<div class="sticky-cta"><a class="btn primary" href="#contact">Request a content shoot</a></div>
 <footer><div class="wrap">© <span id="year"></span> Artspectiv Studio · Sid · artspectivstudio.co.uk · New Barnet, North London</div></footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+</body></html>
