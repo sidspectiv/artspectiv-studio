@@ -198,7 +198,7 @@ Pending from brief (needs assets, deploy, or explicit pick): 4, 6, 7, 8, 14, 15.
 | A10 | P2 | Process step numbers orphan in SR order | **Fixed** — `aria-hidden` on kickers + `id` on h3 |
 | A11 | P3 | Proof stack typo plateddrama / plateddramaaa | **Fixed** — `plateddramaaa` only |
 | A12 | P3 | Rita attribution generic | **Pending** — client sign-off |
-| A13 | P3 | Formspree live smoke test | **Pending** — post-deploy per [artspectiv-forms](.cursor/skills/artspectiv-forms/SKILL.md) |
+| A13 | P3 | Formspree live smoke test | **Partial** — `site-config.json` on production returns `formspree.io/f/xpqnodlk` (2026-05-26 deploy `cdd5d03`); browser submit + inbox confirmation still manual |
 | A14 | P3 | Google Fonts render-blocking | **Open** — acceptable MVP (F15) |
 
 Screenshots: prior passes in [audit-screenshots/](audit-screenshots/); re-capture after real photo swap.
