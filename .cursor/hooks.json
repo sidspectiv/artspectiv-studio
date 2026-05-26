@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "node .cursor/hooks/session-start.mjs"
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "node .cursor/hooks/pre-tool-use.mjs",
+        "matcher": "Write|Edit|MultiEdit|Delete|ApplyPatch|EditNotebook"
+      }
+    ],
+    "beforeReadFile": [
+      {
+        "command": "node .cursor/hooks/before-read-file.mjs",
+        "matcher": "Read|TabRead"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "node .cursor/hooks/after-file-edit.mjs"
+      }
+    ],
+    "afterAgentResponse": [
+      {
+        "command": "node .cursor/hooks/after-agent-response.mjs"
+      }
+    ],
+    "stop": [
+      {
+        "command": "node .cursor/hooks/stop-learning.mjs"
+      }
+    ]
+  }
+}

@@ -4,40 +4,54 @@ Premium photo and reel content for cafés, bars, salons and local brands across 
 
 ## What this is
 
-This repository contains the static website for **Artspectiv Studio**: a premium local content studio focused on productised photo, reel and monthly content-bank services.
+Static website for **Artspectiv Studio** — productised photo, reel and monthly content-bank services.
 
-The site is intentionally simple:
-
-- `index.html` contains the full website.
-- `assets/` holds portfolio images.
-- `docs/` holds deployment and image guidance.
-- `prompts/` holds the Codex brief for future AI-assisted edits.
+- `index.html` — entire site (HTML, CSS, JS)
+- `assets/` — portfolio images and meta assets
+- `docs/` — deployment, design audit, image shot list
+- `llms.txt` — **agent read-first index**
+- `AGENTS.md` — institutional memory and harness architecture
 
 ## Stack
 
-- HTML
-- CSS
-- Vanilla JavaScript
-- Cloudflare Pages
+- HTML, CSS, vanilla JavaScript
+- Cloudflare Pages (no build step)
 
-No build step. No framework. No nonsense.
+## Agent harness
+
+This repo uses a Cursor agent harness (rules, hooks, skills, file-based memory):
+
+| Layer | Location |
+|-------|----------|
+| Entry | `llms.txt` → `AGENTS.md` → `PROGRAM.md` |
+| Rules | `.cursor/rules/*.mdc` |
+| Skills | `.cursor/skills/*/SKILL.md` |
+| Hooks | `.cursor/hooks.json` |
+
+```bash
+npm run verify:agent-harness
+npm run audit:skills
+npm run test:hooks
+```
+
+Legacy Codex brief: `prompts/codex-brief.md` (redirects to AGENTS.md).
 
 ## Deployment
 
-Connect this repo to Cloudflare Pages with:
+Connect to Cloudflare Pages:
 
 ```text
 Framework preset: None
-Build command: leave blank
+Build command: (leave blank)
 Build output directory: /
 ```
 
-Every push to `main` should auto-deploy to Cloudflare Pages once connected.
+See `docs/deployment-notes.md` and `.cursor/skills/artspectiv-deploy/SKILL.md`.
 
 ## Brand direction
 
-Dark editorial. Warm ivory. Muted gold. Premium local studio. Hospitality-forward, but flexible enough for salons, clinics and bars.
+Dark editorial. Warm ivory. Muted gold. Premium local studio.
 
 ## Image rule
 
-Only use the strongest 20–30 images. A portfolio is a sales weapon, not a storage cupboard.
+Only use the strongest 20–30 images. Filenames must match `docs/image-shot-list.md` and `index.html`.

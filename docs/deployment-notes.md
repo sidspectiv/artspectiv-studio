@@ -31,9 +31,10 @@ Build output directory: /
 ## Update workflow
 
 1. Edit files locally or through GitHub/Codex.
-2. Commit changes to `main`.
-3. Cloudflare Pages auto-deploys.
-4. Check the live URL.
+2. Run pre-deploy checks: `npm run predeploy` (or Cursor command **`/deploy-cloudflare`**).
+3. Commit changes to `main` and push.
+4. Cloudflare Pages auto-deploys.
+5. Post-deploy: curl checks below + spot-check `/#contact` form.
 
 ## Image workflow
 
@@ -57,9 +58,10 @@ Expect `Content-Type: image/jpeg` (not `text/html`).
 
 ## Enquiry form (Formspree)
 
-1. Create a form at [formspree.io](https://formspree.io) for `hello@artspectivstudio.co.uk`.
-2. Set `assets/site-config.json` → `"formAction": "https://formspree.io/f/YOUR_ID"`.
-3. Commit and redeploy. The `#contact` form enables submit; until then, visitors use the email link.
+1. Form endpoint: `https://formspree.io/f/xpqnodlk` (notifications in Formspree dashboard).
+2. `assets/site-config.json` → `formAction` must match that URL.
+3. In Formspree, allow domains: `artspectivstudio.co.uk`, your `*.pages.dev` preview host, and `localhost` for local tests.
+4. Commit and redeploy after changing `formAction`.
 
 ## Custom domain later
 

@@ -1,0 +1,46 @@
+# Artspectiv Studio — agent entrypoint
+
+Premium static marketing site for a North London content studio (photo, reels, monthly content bank).
+
+## Read first
+
+- AGENTS.md — Decision Log, Gotchas, Current Direction, harness architecture
+- PROGRAM.md — launch waves, commercial GTM phases, verification loop
+- CONTEXT.md — distilled domain + strategy language (packages, proof, first-wave GTM)
+- docs/commercial-strategy.md — commercial intent, lead priority, outreach ops (deep reference)
+
+## Authority order (when docs disagree)
+
+1. PROGRAM.md (execution loop + waves)
+2. AGENTS.md (memory + constraints)
+3. prompts/codex-brief.md (legacy redirect only)
+
+## Canonical paths
+
+- Site: index.html (HTML + CSS + JS in one file)
+- Images: assets/
+- QA record: docs/design-audit.md
+- Deploy: docs/deployment-notes.md · Cursor `/deploy-cloudflare` · `npm run predeploy`
+- Asset names: docs/image-shot-list.md
+- Commercial strategy: docs/commercial-strategy.md
+
+## Agent harness (this repo)
+
+- Rules: .cursor/rules/*.mdc (always-on + scoped globs)
+- Skills: .cursor/skills/*/SKILL.md (canonical — read on demand); .agents/skills/*/SKILL.md (external installs: ui-ux-pro-max)
+- Hooks: .cursor/hooks.json — session brief, secret gates, governance nudges
+- Skill inventory: npm run audit:skills
+
+## Context engineering
+
+- Three-step retrieval: index (Grep, paths, DL-NNN) → slice (Read line ranges) → full detail only when required (artspectiv-agent-workflow.mdc)
+- Session brief budgets: docs/dev/token-budgets.md; implementation: .cursor/hooks/lib/brief-budgets.mjs
+- Subagent isolation: CURSOR_SUBAGENT=true → minimal brief (template + Active Constraints only)
+- Tool result clearing: drop huge re-fetchable dumps; keep paths and outcomes in prose
+- Planning: multi-section site changes → plan in .cursor/plans/; use writing-plans skill
+- Compaction: long sessions → summarise; persist decisions in AGENTS.md Decision Log
+
+## Further reading
+
+- Cursor agent best practices: https://cursor.com/blog/agent-best-practices
+- Anthropic context engineering: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents

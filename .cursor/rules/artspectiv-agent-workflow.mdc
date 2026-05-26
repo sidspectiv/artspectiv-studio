@@ -1,0 +1,85 @@
+---
+description: "Agent workflow for Artspectiv Studio — planning, tools, memory, context engineering, skill matrix."
+globs: ["**/*"]
+alwaysApply: true
+---
+
+## Task protocol
+
+For **non-trivial** work: skim `llms.txt` → **2–4 line plan** → smallest verified steps → QA checklist → **then** AGENTS.md if durable. Human steering: read and update **`PROGRAM.md`** (waves, launch remainder).
+
+## PROGRAM.md sync (mandatory when roadmap moves)
+
+Hooks **nudge only**; you still apply the edit.
+
+- After any task that completes a wave or shifts priorities: update **`PROGRAM.md`** — **Last refined**, Launch wave status, Public launch remainder.
+- When **`AGENTS.md`** scope or Current Direction changes: align **`PROGRAM.md`** unless typo-only.
+- When **`PROGRAM.md`** wave/direction changes: align **`AGENTS.md` Current Direction** (and Decision Log stub if non-obvious).
+
+## Cursor harness
+
+Instructions = Rules + session brief; **Read** skills on demand. **Plan first:** Plan Mode for multi-section `index.html` work; save plans under **`.cursor/plans/`**. **Context:** prefer Grep over attaching everything; new chat per major feature. Official guide: [cursor.com/blog/agent-best-practices](https://cursor.com/blog/agent-best-practices).
+
+## Tooling
+
+- Prefer **Read / Grep / Glob / StrReplace** over generic shell text tools.
+- Shell for git and `node .cursor/scripts/*` only when needed.
+
+## Shell safety
+
+- **Never** `git push --force` to `main`/`master`, `git reset --hard`, or destructive clean unless the user explicitly asked.
+- **Never** `--no-verify` unless explicitly requested.
+
+## Hooks (this repo)
+
+Node hooks in **`.cursor/hooks.json`**. `stop` → continual-learning index. Extend existing hooks rather than adding new runtimes.
+
+## Subagents (`Task` tool)
+
+- Subagents **do not** inherit chat history — paste goal, paths, constraints, acceptance checks.
+- **`CURSOR_SUBAGENT=true`:** `session-start.mjs` injects **minimal** brief (template + Active Constraints only).
+- Return **condensed summaries** (1–2k tokens max): outcomes, paths, blockers, next steps.
+
+## Error retention
+
+Keep failures in context; retry with a different approach rather than erasing error traces.
+
+## Tool result clearing
+
+Do not keep huge re-fetchable tool outputs when a **path or one-line pointer** suffices. Keep **what changed and why** in prose.
+
+## Three-step context retrieval
+
+1. **Index** — `Grep`, file paths, `DL-NNN` from AGENTS.
+2. **Slice** — `Read` with tight line ranges.
+3. **Detail** — full file only when the slice is insufficient.
+
+Session brief budgets: `docs/dev/token-budgets.md`.
+
+## Installing skills
+
+Read **`.cursor/skills/artspectiv-skill-install/SKILL.md`** first. Canonical: **`.cursor/skills/<id>/`**. MDC pointers only — depth stays in skills.
+
+## Memory and skills
+
+- **Sceptical memory:** verify AGENTS claims against the repo (`artspectiv-memory` skill).
+- **Deep dives:** `designing-beautiful-websites`, `ui-ux-pro-max`, `artspectiv-deploy`, `artspectiv-forms`, `writing-plans`, `verification-before-completion`, `artspectiv-skill-install`.
+
+## Skill trigger matrix (deterministic activation)
+
+Read the matching `SKILL.md` before coding when a task hits these surfaces:
+
+| Surface / task | Required skill |
+|---|---|
+| `index.html` layout, copy, CSS, conversion flow | `designing-beautiful-websites` |
+| Visual refresh, palette, a11y UX audit | `ui-ux-pro-max` |
+| Cloudflare deploy, rollback, image workflow | `artspectiv-deploy` |
+| Tally/Formspree CTA swap | `artspectiv-forms` |
+| Outreach, pitch copy, lead sell-sheets, GTM planning | `artspectiv-commercial` |
+| Multi-section site changes (3+ sections) | `writing-plans` |
+| Before claiming done / deploy-ready | `verification-before-completion` |
+| Install/vendor external skills | `artspectiv-skill-install` |
+
+## QA and handoff
+
+Before handoff on site work: read **`.cursor/rules/artspectiv-qa.mdc`** or run checklist in `designing-beautiful-websites` skill.

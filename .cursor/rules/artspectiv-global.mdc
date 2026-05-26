@@ -1,0 +1,38 @@
+---
+description: "Global rules for Artspectiv Studio — static site, trust, git safety, UK English."
+globs: ["**/*"]
+alwaysApply: true
+---
+
+## Product truth
+
+- **Static site only** — `index.html` is the application. No framework unless explicitly approved.
+- **Pricing:** Starter from £445, Monthly from £945, Campaign from £1,595. No legacy £225/£695/£1,095.
+- **CTA copy:** "Request a content shoot" — do not genericise.
+- **Deploy:** Cloudflare Pages, no build command, output `/`.
+
+## Engineering discipline
+
+- Minimal diffs; match existing CSS token and section patterns in `index.html`.
+- UK English in comments, docs, and user-facing explanations.
+- No secrets in repo; use `.env.example` patterns only if env is ever added.
+
+## Git safety
+
+- No force-push to `main`, no hard reset, no hook skipping unless user asked.
+- Commits only when the user requests them.
+
+## Progressive disclosure
+
+Deep guidance lives in **`.cursor/skills/`** — Read on demand:
+
+- Design: `designing-beautiful-websites`, `ui-ux-pro-max`
+- Deploy: `artspectiv-deploy`
+- Memory: `artspectiv-memory`
+- Verification: `verification-before-completion`
+
+## Performance
+
+- No heavy JS dependencies for simple UI.
+- Respect `prefers-reduced-motion` (already in `index.html`).
+- Images under `assets/` with compression per `docs/image-shot-list.md`.

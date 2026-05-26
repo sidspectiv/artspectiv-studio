@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "recommended": [
+    {
+      "id": "verification-before-completion",
+      "source": "https://github.com/anthropics/skills",
+      "install": "npx skills add https://github.com/anthropics/skills --skill verification-before-completion"
+    },
+    {
+      "id": "writing-plans",
+      "source": "https://github.com/anthropics/skills",
+      "install": "npx skills add https://github.com/anthropics/skills --skill writing-plans"
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "install": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max"
+    }
+  ],
+  "canonical": ".cursor/skills/"
+}

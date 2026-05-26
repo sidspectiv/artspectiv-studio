@@ -1,0 +1,56 @@
+---
+description: "QA harness for Artspectiv landing page — mobile-first checks and handoff format."
+globs: ["index.html", "docs/design-audit.md"]
+alwaysApply: false
+---
+
+## When to run
+
+Before claiming site work **done** or **deploy-ready**. Pair with `verification-before-completion` skill.
+
+## QA harness checklist
+
+### 1) Outcomes and CTA
+- [ ] Offer clear within 5–10 seconds on mobile
+- [ ] Primary CTA visible without excessive scroll (hero + sticky CTA)
+- [ ] Secondary CTA present where designed
+
+### 2) Information hierarchy
+- [ ] Section order matches AGENTS.md narrative
+- [ ] Packages before long portfolio scroll
+- [ ] Rita's Café case study before generic portfolio groups
+
+### 3) Offers
+- [ ] Package names and pricing match AGENTS constraints
+- [ ] Deliverables and posting support scannable per card
+
+### 4) Trust
+- [ ] New Barnet / North London stated
+- [ ] Rita's Café proof specific and verifiable tone
+
+### 5) UX and accessibility
+- [ ] Small mobile, tablet, desktop spot-check
+- [ ] `:focus-visible` on interactive elements
+- [ ] Image fallbacks graceful
+- [ ] `prefers-reduced-motion` respected
+
+### 6) Conversion friction
+- [ ] Contact path obvious; note if still `mailto` vs hosted form
+
+## Handoff format
+
+```text
+## Changed
+- …
+
+## Verified
+- …
+
+## Remaining
+- …
+
+## AGENTS/PROGRAM
+- (only if durable learning or wave movement)
+```
+
+Update `docs/design-audit.md` when completing a full audit pass.

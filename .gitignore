@@ -1,0 +1,17 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Agent harness local state (stop-learning writes here)
+.cursor/hooks/state/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Optional external skill installs (re-install via skills-lock.json)
+.agents/

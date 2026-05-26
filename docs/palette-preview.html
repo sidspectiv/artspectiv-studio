@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artspectiv — creative look-and-feel directions (A–F)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:wght@600;700&family=Cormorant+Infant:wght@600;700&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600;700&family=Lora:wght@400;500&family=Playfair+Display:wght@600;700&family=Raleway:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #ddd8d0;
+      padding: 2rem 1rem 3rem;
+      color: #1a1410;
+    }
+    .wrap { max-width: 1040px; margin: auto; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.35rem; }
+    .lede {
+      color: #5c5348;
+      font-size: 0.92rem;
+      margin-bottom: 1.75rem;
+      max-width: 62ch;
+      line-height: 1.55;
+    }
+    .palette {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.15rem 1.35rem 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .palette-head { margin-bottom: 0.85rem; }
+    .palette-head h2 { font-size: 1.05rem; margin-bottom: 0.25rem; color: #222; }
+    .palette-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: #eee;
+      color: #444;
+      margin-bottom: 0.35rem;
+    }
+    .palette-note { font-size: 0.82rem; color: #666; max-width: 54ch; line-height: 1.45; }
+    .font-note { font-size: 0.75rem; color: #888; margin-top: 0.35rem; }
+    .dim-note { font-size: 0.72rem; color: #999; margin-top: 0.2rem; font-style: italic; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.85rem; }
+    .swatch { width: 88px; text-align: center; }
+    .chip {
+      height: 52px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,.1);
+      margin-bottom: 0.3rem;
+    }
+    .label { font-size: 0.6rem; color: #666; line-height: 1.25; }
+
+    .mock {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    .mock-texture {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .mock-body { position: relative; z-index: 1; }
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .mock-nav .cta {
+      font-size: 0.65rem;
+      padding: 0.35rem 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      white-space: nowrap;
+    }
+    .mock-hero { padding: 1rem 0.85rem 0.85rem; }
+    .mock[data-style="airy"] .mock-hero { padding: 1.25rem 0.85rem 1rem; }
+    .mock[data-style="tight"] .mock-hero { padding: 0.75rem 0.85rem 0.65rem; }
+    .mock[data-style="luxury"] .mock-hero { padding: 1.35rem 0.85rem 1.1rem; }
+    .mock-hero .kicker {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    .mock-hero h3 {
+      font-size: 1.35rem;
+      line-height: 1.02;
+      margin-bottom: 0.4rem;
+      max-width: 22ch;
+    }
+    .mock-hero .intro { font-size: 0.78rem; line-height: 1.45; margin-bottom: 0.65rem; max-width: 40ch; }
+    .mock[data-style="column"] .mock-hero .intro { line-height: 1.65; max-width: 34ch; }
+    .mock-ctas { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.5rem; }
+    .mock-ctas .btn {
+      display: inline-block;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .mock-ctas .btn.link { border: none; padding: 0.4rem 0; text-decoration: underline; text-underline-offset: 3px; }
+    .mock-ctas .btn.secondary { background: transparent; border: 1px solid; }
+    .mock-divider { margin: 0 0.85rem; }
+    .mock-package { padding: 0 0.85rem 0.85rem; }
+    .mock-card {
+      padding: 0.75rem 0.85rem;
+      position: relative;
+      font-size: 0.75rem;
+      line-height: 1.45;
+    }
+    .mock-card h4 { font-size: 0.95rem; margin-bottom: 0.15rem; }
+    .mock-card .price { font-size: 1.15rem; margin-bottom: 0.25rem; }
+    .mock-card .hook { font-size: 0.7rem; margin-bottom: 0.35rem; }
+    .badge {
+      position: absolute;
+      top: 0.55rem;
+      right: 0.55rem;
+      font-size: 0.55rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.15rem 0.4rem;
+    }
+    .token-block { margin-top: 0.85rem; }
+    .token-block summary {
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #444;
+      padding: 0.35rem 0;
+    }
+    .token-block pre {
+      margin-top: 0.5rem;
+      padding: 0.75rem;
+      background: #f4f2ef;
+      border-radius: 8px;
+      font-size: 0.68rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      border: 1px solid #e0dcd4;
+    }
+    @media (min-width: 720px) {
+      .palette-inner { display: grid; grid-template-columns: 1fr 1.15fr; gap: 1rem; align-items: start; }
+      .palette-head { grid-column: 1 / -1; }
+      .token-block { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Artspectiv — creative look-and-feel directions</h1>
+    <p class="lede">
+      Seven holistic options: <strong>Baseline</strong> (live site) plus <strong>A–F</strong>. Each changes colour, typography, shape, texture, spacing, and card/CTA treatment — not just a hex swap.
+      Each card shows swatches plus a mini nav + hero + package mock. Pick a letter in chat to apply to <code>index.html</code>.
+    </p>
+
+    <!-- BASELINE -->
+    <article class="palette" id="baseline">
+      <div class="palette-inner">
+        <div class="palette-head">
+          <span class="palette-tag">Baseline · Current live</span>
+          <h2>Warm brown + gold</h2>
+          <p class="palette-note">Best for: safe editorial premium. Dark, warm, muted gold — what you have now.</p>
+          <p class="font-note">Fonts: Cormorant Garamond + Inter · Shape: 22px pills · Texture: subtle radial glow</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#14100c"></div><div class="label">bg #14100c</div></div>
+          <div class="swatch"><div class="chip" style="background:#1c1611"></div><div class="label">panel #1c1611</div></div>
+          <div class="swatch"><div class="chip" style="background:#f4e9db"></div><div class="label">text #f4e9db</div></div>
+          <div class="swatch"><div class="chip" style="background:#d4c7b8"></div><div class="label">muted #d4c7b8</div></div>
+          <div class="swatch"><div class="chip" style="background:#c8a96a"></div><div class="label">accent #c8a96a</div></div>
+        </div>
+        <div class="mock" style="background:#14100c;color:#f4e9db;border-radius:22px">
+          <div class="mock-body">
+            <div class="mock-nav" style="border-bottom:1px solid rgba(244,233,219,.17)">
+              <span style="font-family:Inter,sans-serif">Artspectiv · New Barnet</span>
+              <span class="cta" style="background:#c8a96a;color:#18120d;border-radius:999px">Request a content shoot</span>
+            </div>
+            <div class="mock-hero">
+              <p class="kicker" style="color:#c8a96a;font-family:Inter,sans-serif">Premium local content studio</p>
+              <h3 style="font-family:'Cormorant Garamond',serif;color:#f4e9db">Your business looks better in real life.</h3>
+              <p class="intro" style="color:#d4c7b8;font-family:Inter,sans-serif">Premium photo, reel and posting support for North London independents.</p>
+              <div class="mock-ctas">
+                <span class="btn" style="background:#c8a96a;color:#18120d;border-radius:999px">Request a content shoot</span>
+                <span class="btn secondary" style="color:#d4c7b8;border-color:rgba(244,233,219,.35);border-radius:999px">View the work</span>
+              </div>
+            </div>
+            <div class="mock-divider" style="height:1px;background:rgba(244,233,219,.12)"></div>
+            <div class="mock-package">
+              <div class="mock-card featured" style="background:linear-gradient(165deg,#262018,rgba(200,169,106,.12));border:1px solid rgba(200,169,106,.55);border-radius:22px;color:#f4e9db">
+                <span class="badge" style="background:#c8a96a;color:#18120d;border-radius:999px">Recommended</span>
+                <h4 style="font-family:'Cormorant Garamond',serif">Monthly Content Bank</h4>
+                <p class="price" style="font-family:'Cormorant Garamond',serif">from £945</p>
+                <p class="hook" style="color:#c8a96a">Most New Barnet independents start here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="token-block">
+          <summary>Copy tokens for index.html</summary>
+          <pre>:root {
+  --bg: #14100c;
+  --panel: #1c1611;
+  --panel-soft: #262018;
+  --text: #f4e9db;
+  --muted: #d4c7b8;
+  --gold: #c8a96a;
+  --line: rgba(244, 233, 219, 0.17);
+  --r: 22px;
+}
+/* Fonts: Cormorant Garamond + Inter */</pre>
+        </details>
+      </div>
+    </article>
+
+    <!-- A: ANALOG FILM -->
+    <article class="palette" id="option-a">
+      <div class="palette-inner">
+        <div class="palette-head">
+          <span class="palette-tag">A · Warm · Tactile</span>
+          <h2>Analog Film</h2>
+          <p class="palette-note">Best for: printed lookbook energy. Vintage-warm, tactile, editorial — photos feel like physical prints.</p>
+          <p class="font-note">Fonts: Playfair Display + Lora · Shape: 20px soft · Texture: paper grain</p>
+          <p class="dim-note">CTA: pill sienna · Secondary: underline only · Cards: lifted white shadow</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#faf5ec"></div><div class="label">paper #faf5ec</div></div>
+          <div class="swatch"><div class="chip" style="background:#ffffff;border:1px solid #e8dfd0"></div><div class="label">panel #fff</div></div>
+          <div class="swatch"><div class="chip" style="background:#1e1a15"></div><div class="label">ink #1e1a15</div></div>
+          <div class="swatch"><div class="chip" style="background:#6b7a5e"></div><div class="label">olive #6b7a5e</div></div>
+          <div class="swatch"><div class="chip" style="background:#c0582e"></div><div class="label">sienna #c0582e</div></div>
+        </div>
+        <div class="mock" data-style="airy" style="background:#faf5ec;color:#1e1a15;border-radius:20px;box-shadow:0 12px 40px rgba(30,26,21,.1)">
+          <div class="mock-texture" style="opacity:.35;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+          <div class="mock-body">
+            <div class="mock-nav" style="border-bottom:1px solid #e8dfd0;background:#fff;border-radius:20px 20px 0 0">
+              <span style="font-family:Lora,serif;font-weight:500;letter-spacing:0.04em">Artspectiv · New Barnet</span>
+              <span class="cta" style="background:#c0582e;color:#faf5ec;border-radius:999px;font-family:Lora,serif">Request a content shoot</span>
+            </div>
+            <div class="mock-hero">
+              <p class="kicker" style="color:#6b7a5e;font-family:Lora,serif;font-style:italic">Premium local content studio</p>
+              <h3 style="font-family:'Playfair Display',serif;font-weight:700;color:#1e1a15">Your business looks better in real life.</h3>
+              <p class="intro" style="color:#6b7a5e;font-family:Lora,serif">Premium photo, reel and posting support for North London independents.</p>
+              <div class="mock-ctas">
+                <span class="btn" style="background:#c0582e;color:#faf5ec;border-radius:999px;font-family:Lora,serif">Request a content shoot</span>
+                <span class="btn link" style="color:#c0582e;font-family:Lora,serif">View the work</span>
+              </div>
+            </div>
+            <div class="mock-divider" style="height:1px;background:#e8dfd0;margin-top:0.25rem"></div>
+            <div class="mock-package">
+              <div class="mock-card featured" style="background:#fff;border:1px solid #e8dfd0;border-radius:20px;box-shadow:0 8px 24px rgba(30,26,21,.08);color:#1e1a15">
+                <span class="badge" style="background:#c0582e;color:#faf5ec;border-radius:999px;font-family:Lora,serif">Recommended</span>
+                <h4 style="font-family:'Playfair Display',serif">Monthly Content Bank</h4>
+                <p class="price" style="font-family:'Playfair Display',serif;color:#c0582e">from £945</p>
+                <p class="hook" style="color:#6b7a5e;font-family:Lora,serif">Most New Barnet independents start here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="token-block">
+          <summary>Copy tokens for index.html</summary>
+          <pre>:root {
+  --bg: #faf5ec;
+  --panel: #ffffff;
+  --panel-soft: #f5efe4;
+  --text: #1e1a15;
+  --muted: #6b7a5e;
+  --gold: #c0582e;
+  --line: rgba(30, 26, 21, 0.12);
+  --r: 20px;
+}
+/* Fonts: Playfair Display + Lora */</pre>
+        </details>
+      </div>
+    </article>
+
+    <!-- B: STUDIO MONO -->
+    <article class="palette" id="option-b">
+      <div class="palette-inner">
+        <div class="palette-head">
+          <span class="palette-tag">B · Minimal · Swiss</span>
+          <h2>Studio Mono</h2>
+          <p class="palette-note">Best for: typographic confidence. Content speaks, chrome disappears — feels like a design studio, not an agency.</p>
+          <p class="font-note">Fonts: Space Grotesk · Shape: 0px sharp · Texture: none (flat)</p>
+          <p class="dim-note">CTA: blue rectangle · Secondary: text + arrow · Cards: left-border accent only</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#ffffff;border:1px solid #e2e8f0"></div><div class="label">bg #ffffff</div></div>
+          <div class="swatch"><div class="chip" style="background:#f8fafc"></div><div class="label">panel #f8fafc</div></div>
+          <div class="swatch"><div class="chip" style="background:#111111"></div><div class="label">text #111111</div></div>
+          <div class="swatch"><div class="chip" style="background:#64748b"></div><div class="label">muted #64748b</div></div>
+          <div class="swatch"><div class="chip" style="background:#2563eb"></div><div class="label">accent #2563eb</div></div>
+        </div>
+        <div class="mock" data-style="tight" style="background:#ffffff;color:#111111;border-radius:0;border:1px solid #111">
+          <div class="mock-body">
+            <div class="mock-nav" style="border-bottom:1px solid #111;font-family:'Space Grotesk',sans-serif;font-size:0.6rem">
+              <span>ARTSPECTIV · NEW BARNET</span>
+              <span class="cta" style="background:#2563eb;color:#fff;border-radius:0;font-family:'Space Grotesk',sans-serif">Request a content shoot</span>
+            </div>
+            <div class="mock-hero">
+              <p class="kicker" style="color:#2563eb;font-family:'Space Grotesk',sans-serif;letter-spacing:0.16em">Premium local content studio</p>
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.03em;font-size:1.45rem">Your business looks better in real life.</h3>
+              <p class="intro" style="color:#64748b;font-family:'Space Grotesk',sans-serif">Premium photo, reel and posting support for North London independents.</p>
+              <div class="mock-ctas">
+                <span class="btn" style="background:#2563eb;color:#fff;border-radius:0;font-family:'Space Grotesk',sans-serif">Request a content shoot</span>
+                <span class="btn link" style="color:#111;font-family:'Space Grotesk',sans-serif">View the work →</span>
+              </div>
+            </div>
+            <div class="mock-divider" style="height:1px;background:#111"></div>
+            <div class="mock-package">
+              <div class="mock-card featured" style="background:transparent;border:1px solid #e2e8f0;border-left:4px solid #2563eb;border-radius:0;color:#111">
+                <span class="badge" style="background:#2563eb;color:#fff;border-radius:0;font-family:'Space Grotesk',sans-serif">Recommended</span>
+                <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:700">Monthly Content Bank</h4>
+                <p class="price" style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:#2563eb">from £945</p>
+                <p class="hook" style="color:#64748b;font-family:'Space Grotesk',sans-serif">Most New Barnet independents start here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="token-block">
+          <summary>Copy tokens for index.html</summary>
+          <pre>:root {
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --panel-soft: #f1f5f9;
+  --text: #111111;
+  --muted: #64748b;
+  --gold: #2563eb;
+  --line: rgba(17, 17, 17, 0.12);
+  --r: 0px;
+}
+/* Fonts: Space Grotesk (display + body) */</pre>
+        </details>
+      </div>
+    </article>
+
+    <!-- C: VELVET LOUNGE -->
+    <article class="palette" id="option-c">
+      <div class="palette-inner">
+        <div class="palette-head">
+          <span class="palette-tag">C · Dark · Salon luxury</span>
+          <h2>Velvet Lounge</h2>
+          <p class="palette-note">Best for: salons, cocktail bars, intimate premium. Rich, glowing, confident — feels like entering a velvet room.</p>
+          <p class="font-note">Fonts: Cormorant Infant + Raleway · Shape: 24px · Texture: rose-gold halo glow</p>
+          <p class="dim-note">CTA: gradient pill · Cards: glass-like panels · Nav: translucent</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#1a0f1e"></div><div class="label">plum #1a0f1e</div></div>
+          <div class="swatch"><div class="chip" style="background:#2a1828"></div><div class="label">panel #2a1828</div></div>
+          <div class="swatch"><div class="chip" style="background:#f0e2d8"></div><div class="label">blush #f0e2d8</div></div>
+          <div class="swatch"><div class="chip" style="background:#8b7b8e"></div><div class="label">mauve #8b7b8e</div></div>
+          <div class="swatch"><div class="chip" style="background:#d4a373"></div><div class="label">rose gold #d4a373</div></div>
+        </div>
+        <div class="mock" data-style="luxury" style="background:#1a0f1e;color:#f0e2d8;border-radius:24px">
+          <div class="mock-texture" style="background:radial-gradient(circle at 30% 20%,rgba(212,163,115,.28),transparent 55%)"></div>
+          <div class="mock-body">
+            <div class="mock-nav" style="border-bottom:1px solid rgba(212,163,115,.2);background:rgba(26,15,30,.75)">
+              <span style="font-family:Raleway,sans-serif;font-weight:600;letter-spacing:0.08em;font-size:0.62rem">Artspectiv · New Barnet</span>
+              <span class="cta" style="background:linear-gradient(135deg,#d4a373,#c9956a);color:#1a0f1e;border-radius:999px;font-family:Raleway,sans-serif">Request a content shoot</span>
+            </div>
+            <div class="mock-hero">
+              <p class="kicker" style="color:#d4a373;font-family:Raleway,sans-serif">Premium local content studio</p>
+              <h3 style="font-family:'Cormorant Infant',serif;font-weight:700;font-size:1.55rem">Your business looks better in real life.</h3>
+              <p class="intro" style="color:#8b7b8e;font-family:Raleway,sans-serif">Premium photo, reel and posting support for North London independents.</p>
+              <div class="mock-ctas">
+                <span class="btn" style="background:linear-gradient(135deg,#d4a373,#c9956a);color:#1a0f1e;border-radius:999px;font-family:Raleway,sans-serif">Request a content shoot</span>
+                <span class="btn secondary" style="color:#f0e2d8;border-color:rgba(212,163,115,.55);border-radius:999px;font-family:Raleway,sans-serif;background:rgba(212,163,115,.08)">View the work</span>
+              </div>
+            </div>
+            <div class="mock-divider" style="height:1px;background:rgba(212,163,115,.15)"></div>
+            <div class="mock-package">
+              <div class="mock-card featured" style="background:linear-gradient(145deg,rgba(42,24,40,.85),rgba(212,163,115,.12));border:1px solid rgba(212,163,115,.45);border-radius:24px;box-shadow:0 0 32px rgba(212,163,115,.12)">
+                <span class="badge" style="background:linear-gradient(135deg,#d4a373,#c9956a);color:#1a0f1e;border-radius:999px;font-family:Raleway,sans-serif">Recommended</span>
+                <h4 style="font-family:'Cormorant Infant',serif">Monthly Content Bank</h4>
+                <p class="price" style="font-family:'Cormorant Infant',serif;color:#d4a373">from £945</p>
+                <p class="hook" style="color:#8b7b8e;font-family:Raleway,sans-serif">Most New Barnet independents start here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="token-block">
+          <summary>Copy tokens for index.html</summary>
+          <pre>:root {
+  --bg: #1a0f1e;
+  --panel: #2a1828;
+  --panel-soft: #351f32;
+  --text: #f0e2d8;
+  --muted: #8b7b8e;
+  --gold: #d4a373;
+  --line: rgba(212, 163, 115, 0.2);
+  --r: 24px;
+}
+/* Fonts: Cormorant Infant + Raleway */</pre>
+        </details>
+      </div>
+    </article>
+
+    <!-- D: NEON GRID -->
+    <article class="palette" id="option-d">
+      <div class="palette-inner">
+        <div class="palette-head">
+          <span class="palette-tag">D · Bold · Creator energy</span>
+          <h2>Neon Grid</h2>
+          <p class="palette-note">Best for: reel-first, social-native studio. Unapologetic, grid-forward, high contrast — built for TikTok-era clients.</p>
+          <p class="font-note">Fonts: Archivo Black + Inter · Shape: 8px · Texture: dot grid pattern</p>
+          <p class="dim-note">CTA: neon lime uppercase · Cards: dashed neon border · Nav: dark chrome</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#0d0d0d"></div><div class="label">bg #0d0d0d</div></div>
+          <div class="swatch"><div class="chip" style="background:#1a1a1a"></div><div class="label">panel #1a1a1a</div></div>
+          <div class="swatch"><div class="chip" style="background:#e4e4e7"></div><div class="label">text #e4e4e7</div></div>
+          <div class="swatch"><div class="chip" style="background:#71717a"></div><div class="label">muted #71717a</div></div>
+          <div class="swatch"><div class="chip" style="background:#c8ff00"></div><div class="label">neon #c8ff00</div></div>
+        </div>
+        <div class="mock" data-style="tight" style="background:#0d0d0d;color:#e4e4e7;border-radius:8px;border:1px solid #c8ff00">
+          <div class="mock-texture" style="background-image:radial-gradient(circle,rgba(200,255,0,.08) 1px,transparent 1px);background-size:12px 12px;opacity:.6"></div>
+          <div class="mock-body">
+            <div class="mock-nav" style="border-bottom:1px solid rgba(200,255,0,.25);background:#0d0d0d;font-family:Inter,sans-serif;font-size:0.6rem;letter-spacing:0.1em">
+              <span>ARTSPECTIV · NEW BARNET</span>
+              <span class="cta" style="background:#c8ff00;color:#0d0d0d;border-radius:8px;font-family:Inter,sans-serif;font-weight:700;text-transform:uppercase;font-size:0.58rem">Request a content shoot</span>
+            </div>
+            <div class="mock-hero">
+              <p class="kicker" style="color:#c8ff00;font-family:Inter,sans-serif;letter-spacing:0.18em">Reels · Photo · Posting</p>
+              <h3 style="font-family:'Archivo Black',sans-serif;font-size:1.5rem;line-height:0.95;text-transform:uppercase;letter-spacing:-.01em">Your business looks better in real life.</h3>
+              <p class="intro" style="color:#71717a;font-family:Inter,sans-serif">Premium photo, reel and posting support for North London independents.</p>
+              <div class="mock-ctas">
+                <span class="btn" style="background:#c8ff00;color:#0d0d0d;border-radius:8px;font-family:Inter,sans-serif;text-transform:uppercase;font-size:0.65rem">Request a content shoot</span>
+                <span class="btn secondary" style="color:#c8ff00;border-color:#c8ff00;border-radius:8px;font-family:Inter,sans-serif;font-size:0.65rem">View the work</span>
+              </div>
+            </div>
+            <div class="mock-divider" style="height:4px;background:#c8ff00;margin:0"></div>
+            <div class="mock-package">
+              <div class="mock-card featured" style="background:#1a1a1a;border:1px dashed rgba(200,255,0,.45);border-top:4px solid #c8ff00;border-radius:8px">
+                <span class="badge" style="background:#c8ff00;color:#0d0d0d;border-radius:8px;font-family:Inter,sans-serif">Recommended</span>
+                <h4 style="font-family:'Archivo Black',sans-serif;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.02em">Monthly Content Bank</h4>
+                <p class="price" style="font-family:'Archivo Black',sans-serif;font-size:1.35rem;color:#c8ff00">from £945</p>
+                <p class="hook" style="color:#71717a;font-family:Inter,sans-serif">Most New Barnet independents start here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="token-block">
+          <summary>Copy tokens for index.html</summary>
+          <pre>:root {
+  --bg: #0d0d0d;
+  --panel: #1a1a1a;
+  --panel-soft: #222222;
+  --text: #e4e4e7;
+  --muted: #71717a;
+  --gold: #c8ff00;
+  --line: rgba(200, 255, 0, 0.25);
+  --r: 8px;
+}
+/* Fonts: Archivo Black + Inter */</pre>
+        </details>
+      </div>
+    </article>
+
+    <!-- E: SUNDAY PAPER -->
+    <article class="palette" id="option-e">
+      <div class="palette-inner">
+        <div class="palette-head">
+          <span class="palette-tag">E · Light · Editorial</span>
+          <h2>Sunday Paper</h2>
+          <p class="palette-note">Best for: Kinfolk-style calm authority. Magazine spread energy — narrow columns, editorial rules, italic headlines.</p>
+          <p class="font-note">Fonts: Instrument Serif (italic h1) + DM Sans · Shape: mixed · Texture: horizontal rules</p>
+          <p class="dim-note">CTA: terracotta semi-rounded · Nav: text link CTA (no button) · Cards: hairline border</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#fcfaf6"></div><div class="label">paper #fcfaf6</div></div>
+          <div class="swatch"><div class="chip" style="background:#ffffff;border:1px solid #e8e4dc"></div><div class="label">panel #fff</div></div>
+          <div class="swatch"><div class="chip" style="background:#2b2b2b"></div><div class="label">charcoal #2b2b2b</div></div>
+          <div class="swatch"><div class="chip" style="background:#7a8e72"></div><div class="label">sage #7a8e72</div></div>
+          <div class="swatch"><div class="chip" style="background:#b85c38"></div><div class="label">terra #b85c38</div></div>
+        </div>
+        <div class="mock" data-style="column" style="background:#fcfaf6;color:#2b2b2b;border-radius:14px;border:1px solid #e8e4dc">
+          <div class="mock-body">
+            <div class="mock-nav" style="border-bottom:1px solid #2b2b2b;padding-bottom:0.65rem;margin-bottom:0">
+              <span style="font-family:'Instrument Serif',serif;font-style:italic;font-size:0.85rem;letter-spacing:0;text-transform:none;font-weight:400">Artspectiv · New Barnet</span>
+              <span class="cta" style="background:transparent;color:#b85c38;border-radius:0;font-family:'DM Sans',sans-serif;text-decoration:underline;text-underline-offset:3px;padding:0;font-size:0.72rem">Request a content shoot</span>
+            </div>
+            <div class="mock-hero" style="padding-top:0.85rem">
+              <p class="kicker" style="color:#7a8e72;font-family:'DM Sans',sans-serif;font-variant:small-caps;letter-spacing:0.14em">Premium local content studio</p>
+              <h3 style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:1.6rem;line-height:1.05">Your business looks better in real life.</h3>
+              <p class="intro" style="color:#7a8e72;font-family:'DM Sans',sans-serif">Premium photo, reel and posting support for North London independents.</p>
+              <div class="mock-ctas">
+                <span class="btn" style="background:#b85c38;color:#fcfaf6;border-radius:10px;font-family:'DM Sans',sans-serif">Request a content shoot</span>
+                <span class="btn link" style="color:#b85c38;font-family:'DM Sans',sans-serif">View the work</span>
+              </div>
+            </div>
+            <div class="mock-divider" style="border-top:1px dashed #2b2b2b;margin-top:0.5rem"></div>
+            <div class="mock-package">
+              <div class="mock-card featured" style="background:#fff;border:1px solid #e8e4dc;border-top:2px dashed #b85c38;border-radius:14px;color:#2b2b2b">
+                <span class="badge" style="background:#b85c38;color:#fcfaf6;border-radius:4px;font-family:'DM Sans',sans-serif;font-variant:small-caps">Recommended</span>
+                <h4 style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400">Monthly Content Bank</h4>
+                <p class="price" style="font-family:'Instrument Serif',serif;font-style:italic;color:#b85c38">from £945</p>
+                <p class="hook" style="color:#7a8e72;font-family:'DM Sans',sans-serif">Most New Barnet independents start here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="token-block">
+          <summary>Copy tokens for index.html</summary>
+          <pre>:root {
+  --bg: #fcfaf6;
+  --panel: #ffffff;
+  --panel-soft: #f5f2eb;
+  --text: #2b2b2b;
+  --muted: #7a8e72;
+  --gold: #b85c38;
+  --accent-secondary: #7a8e72;
+  --line: rgba(43, 43, 43, 0.15);
+  --r: 14px;
+}
+/* Fonts: Instrument Serif + DM Sans */</pre>
+        </details>
+      </div>
+    </article>
+
+    <!-- F: GLASS LAB -->
+    <article class="palette" id="option-f">
+      <div class="palette-inner">
+        <div class="palette-head">
+          <span class="palette-tag">F · Futuristic · Glass</span>
+          <h2>Glass Lab</h2>
+          <p class="palette-note">Best for: tech-forward 2026 studio. Frosted panels, gradient mesh, violet-cyan glow — innovative without being gimmicky.</p>
+          <p class="font-note">Fonts: Syne + IBM Plex Sans · Shape: 16px glass · Texture: gradient mesh</p>
+          <p class="dim-note">CTA: violet→cyan gradient pill · Cards: frosted glass · Nav: blur backdrop</p>
+        </div>
+        <div class="swatches">
+          <div class="swatch"><div class="chip" style="background:#060d1a"></div><div class="label">navy #060d1a</div></div>
+          <div class="swatch"><div class="chip" style="background:#0f1a2e"></div><div class="label">panel #0f1a2e</div></div>
+          <div class="swatch"><div class="chip" style="background:#f0f2f5"></div><div class="label">frost #f0f2f5</div></div>
+          <div class="swatch"><div class="chip" style="background:#94a3b8"></div><div class="label">muted #94a3b8</div></div>
+          <div class="swatch"><div class="chip" style="background:#8b5cf6"></div><div class="label">violet #8b5cf6</div></div>
+          <div class="swatch"><div class="chip" style="background:#22d3ee"></div><div class="label">cyan #22d3ee</div></div>
+        </div>
+        <div class="mock" style="background:#060d1a;color:#f0f2f5;border-radius:16px">
+          <div class="mock-texture" style="background:radial-gradient(circle at 20% 30%,rgba(139,92,246,.35),transparent 45%),radial-gradient(circle at 80% 70%,rgba(34,211,238,.25),transparent 40%)"></div>
+          <div class="mock-body">
+            <div class="mock-nav" style="border-bottom:1px solid rgba(240,242,245,.1);background:rgba(6,13,26,.7)">
+              <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.04em">Artspectiv · New Barnet</span>
+              <span class="cta" style="background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#fff;border-radius:999px;font-family:'IBM Plex Sans',sans-serif">Request a content shoot</span>
+            </div>
+            <div class="mock-hero">
+              <p class="kicker" style="color:#22d3ee;font-family:'IBM Plex Sans',sans-serif">Premium local content studio</p>
+              <h3 style="font-family:Syne,sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em">Your business looks better in real life.</h3>
+              <p class="intro" style="color:#94a3b8;font-family:'IBM Plex Sans',sans-serif">Premium photo, reel and posting support for North London independents.</p>
+              <div class="mock-ctas">
+                <span class="btn" style="background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#fff;border-radius:999px;font-family:'IBM Plex Sans',sans-serif">Request a content shoot</span>
+                <span class="btn secondary" style="color:#f0f2f5;border-color:rgba(240,242,245,.25);border-radius:999px;font-family:'IBM Plex Sans',sans-serif;background:rgba(240,242,245,.06)">View the work</span>
+              </div>
+            </div>
+            <div class="mock-divider" style="height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,246,.4),rgba(34,211,238,.4),transparent)"></div>
+            <div class="mock-package">
+              <div class="mock-card featured" style="background:rgba(240,242,245,.06);border:1px solid rgba(240,242,245,.12);border-top:2px solid;border-image:linear-gradient(90deg,#8b5cf6,#22d3ee) 1;border-radius:16px;box-shadow:0 8px 32px rgba(139,92,246,.1)">
+                <span class="badge" style="background:linear-gradient(135deg,#8b5cf6,#22d3ee);color:#fff;border-radius:999px;font-family:'IBM Plex Sans',sans-serif">Recommended</span>
+                <h4 style="font-family:Syne,sans-serif;font-weight:700">Monthly Content Bank</h4>
+                <p class="price" style="font-family:Syne,sans-serif;font-weight:800;background:linear-gradient(135deg,#8b5cf6,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">from £945</p>
+                <p class="hook" style="color:#94a3b8;font-family:'IBM Plex Sans',sans-serif">Most New Barnet independents start here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <details class="token-block">
+          <summary>Copy tokens for index.html</summary>
+          <pre>:root {
+  --bg: #060d1a;
+  --panel: #0f1a2e;
+  --panel-soft: #152238;
+  --text: #f0f2f5;
+  --muted: #94a3b8;
+  --gold: #8b5cf6;
+  --accent-secondary: #22d3ee;
+  --line: rgba(240, 242, 245, 0.12);
+  --r: 16px;
+}
+/* Fonts: Syne + IBM Plex Sans */</pre>
+        </details>
+      </div>
+    </article>
+
+    <p class="lede" style="margin-top:1.5rem;margin-bottom:0">
+      <strong>Next step:</strong> Tell the agent “Apply Option C” (or A–F, or keep Baseline). That updates <code>index.html</code> tokens, fonts, and shape language.
+    </p>
+  </div>
+</body>
+</html>

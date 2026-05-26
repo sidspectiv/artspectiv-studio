@@ -1,0 +1,47 @@
+---
+description: "Frontend rules for Artspectiv static site — index.html, tokens, motion, images."
+globs: ["index.html", "skills/**", ".cursor/skills/**"]
+alwaysApply: false
+---
+
+## Context
+
+Inspect `index.html` structure and CSS variables before edits. State section, conversion impact, and mobile behaviour change.
+
+**Deep skills on demand:**
+- **`.cursor/skills/designing-beautiful-websites/SKILL.md`** — conversion path, harness QA, landing checklist
+- **`.agents/skills/ui-ux-pro-max/SKILL.md`** — palettes, a11y, UX rules (optional CLI if installed)
+
+## Design tokens (source of truth: index.html)
+
+- Colours: `--bg`, `--gold`, warm ivory editorial palette
+- Layout: `--max`, `.wrap`, `.grid`, `.card`, `.portfolio-grid`
+- Typography: Cormorant Garamond + Inter (Google Fonts)
+- Breakpoints: **760px**, **1024px** (mobile-first)
+
+## Page narrative (do not reorder without reason)
+
+Hero → credibility strip → problem → offers → Rita's case study → portfolio → process → terms → FAQ → contact CTA.
+
+## Images
+
+- Paths: `assets/<name>.jpg` (plus `favicon.png`, `og-cover.jpg` for meta)
+- Keep `onerror` fallbacks on hero and portfolio images
+- Filenames must match `docs/image-shot-list.md` after changes
+
+## Interaction
+
+- `.reveal` + IntersectionObserver; honour `prefers-reduced-motion`
+- `:focus-visible` outlines on links and buttons (already present — preserve)
+- Sticky header + mobile `.sticky-cta` — do not break anchor navigation to `#contact`
+
+## Accessibility baseline
+
+- Contrast ≥4.5:1 body text; visible focus rings
+- Semantic sections and heading hierarchy (`h1` once, logical `h2`/`h3`)
+- Touch targets ≥44px where possible on primary CTAs
+
+## Motion
+
+- Prefer `transform` and `opacity` only
+- No motion required to understand content

@@ -15,129 +15,279 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@600;700&family=DM+Mono:wght@400;500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#14100c;--panel:#1c1611;--panel-soft:#262018;--text:#f4e9db;--muted:#d4c7b8;--gold:#c8a96a;--line:rgba(244,233,219,.17);--max:1160px;--r:22px;--motion-fast:140ms;--motion-base:220ms;--motion-slow:320ms;--motion-ease:cubic-bezier(.22,.61,.36,1)}
+    :root{--bg:#1a0f1e;--panel:#2a1828;--panel-soft:#351f32;--text:#f0e2d8;--text-secondary:#c4b5aa;--text-muted:#a898ad;--muted:var(--text-secondary);--gold:#d4a373;--gold-deep:#c9956a;--line:rgba(212,163,115,.2);--max:1160px;--r:24px;--glow:none;--glow-soft:0 8px 24px rgba(0,0,0,.18);--space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.5rem;--space-6:2rem;--space-7:2.5rem;--space-8:3rem;--space-9:4rem;--space-10:5rem;--motion-fast:140ms;--motion-base:220ms;--motion-slow:280ms;--motion-ease:cubic-bezier(.22,.61,.36,1)}
     *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 16% 8%,rgba(200,169,106,.14),transparent 34rem),var(--bg);color:var(--text);line-height:1.6}
+    body{font-family:Raleway,system-ui,sans-serif;background:radial-gradient(circle at 30% 20%,rgba(212,163,115,.1),transparent 34rem),var(--bg);color:var(--text);line-height:1.6}
     a{color:inherit;text-decoration:none}img{width:100%;height:100%;object-fit:cover;display:block}
     .wrap{width:min(var(--max),calc(100% - 1.5rem));margin:auto}
-    section{padding:3.75rem 0;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0) 26%)}.stack>*+*{margin-top:1rem}
-    h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:.96;letter-spacing:-.03em;font-weight:600}
-    h1{font-size:clamp(2.5rem,10vw,4.7rem);max-width:15ch}h2{font-size:clamp(2rem,8vw,3.6rem);max-width:18ch}h3{font-size:1.7rem}
-    .intro{color:var(--muted);max-width:64ch}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.2rem 1.1rem;border-radius:999px;border:1px solid var(--line);font-weight:700;box-shadow:0 0 0 rgba(0,0,0,0);transition:transform var(--motion-fast) var(--motion-ease),box-shadow var(--motion-base) var(--motion-ease),background-color var(--motion-base) var(--motion-ease),border-color var(--motion-base) var(--motion-ease),color var(--motion-base) var(--motion-ease)}
-    .btn.primary{background:var(--gold);border-color:var(--gold);color:#18120d}
-    .btn.secondary{background:transparent;border-color:rgba(244,233,219,.35);color:var(--muted)}
-    .btn.secondary:hover,.btn.secondary:focus-visible{background:rgba(244,233,219,.08);border-color:rgba(244,233,219,.55);color:var(--text)}
-     .btn:hover,.btn:focus-visible{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,.22)}
-    .btn:active{transform:translateY(0);box-shadow:0 3px 10px rgba(0,0,0,.18)}
+    section{padding:var(--space-9) 0;background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,0) 26%)}section[id]{scroll-margin-top:5rem}
+    .stack>*+*{margin-top:var(--space-4)}
+    h1,h2,h3{font-family:"Cormorant Infant",serif;letter-spacing:-.03em;font-weight:700}
+    h1{font-size:clamp(2.5rem,10vw,4.7rem);max-width:15ch;line-height:1.08}
+    h2{font-size:clamp(2rem,8vw,3.6rem);max-width:18ch;line-height:1.1}
+    h3{font-size:1.7rem;line-height:1.15}
+    .intro{color:var(--text-secondary);max-width:58ch;line-height:1.65}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.2rem 1.1rem;border-radius:999px;border:1px solid var(--line);font-weight:700;font-family:Raleway,sans-serif;box-shadow:0 0 0 rgba(0,0,0,0);transition:transform var(--motion-fast) var(--motion-ease),box-shadow var(--motion-base) var(--motion-ease),background-color var(--motion-base) var(--motion-ease),border-color var(--motion-base) var(--motion-ease),color var(--motion-base) var(--motion-ease)}
+    .btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold-deep));border-color:var(--gold);color:var(--text-on-accent,#1a0f1e)}
+    .btn.secondary{background:rgba(212,163,115,.08);border-color:rgba(212,163,115,.55);color:var(--text)}
+    .btn.secondary:hover,.btn.secondary:focus-visible{background:rgba(212,163,115,.16);border-color:rgba(212,163,115,.7);color:var(--text)}
+    .btn:hover,.btn:focus-visible{transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,.28)}
+    .btn:active{transform:translateY(0);box-shadow:0 3px 10px rgba(0,0,0,.2)}
     a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-    .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}
+    .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-family:"DM Mono",monospace}
+    .gold-accent{color:var(--gold);font-weight:600}
 
-    header{position:sticky;top:0;z-index:30;background:rgba(15,13,11,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .skip-link{position:absolute;left:-9999px;top:.75rem;z-index:100;padding:.55rem 1rem;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a0f1e;font-weight:700;border-radius:999px}
+    .skip-link:focus{left:.75rem}
+
+    header{position:sticky;top:0;z-index:30;background:rgba(26,15,30,.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
     nav{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.6rem 0}
-    .brand{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-    .links{display:none;color:var(--muted);font-size:.9rem;gap:1rem}
+    .brand-wrap{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;min-width:0}
+    .brand{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+    .brand-pill{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a0f1e;border-radius:999px;padding:.25rem .55rem;font-size:.75rem;font-family:"DM Mono",monospace;font-weight:500;letter-spacing:.04em;white-space:nowrap}
+    .links{display:none;color:var(--text-secondary);font-size:.9rem;gap:1rem}
 
-    .hero{min-height:calc(100vh - 66px);display:grid;align-items:end;padding:2.8rem 0 2rem;background:linear-gradient(180deg,rgba(200,169,106,.06),rgba(20,16,12,0) 38%)}
-    .hero-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;align-items:end}
-    .hero-media{border:1px solid var(--line);border-radius:1.35rem;min-height:22rem;overflow:hidden;background:linear-gradient(135deg,rgba(200,169,106,.2),rgba(63,45,32,.88))}
-    .hero-fallback{padding:1rem;color:var(--muted);font-size:.9rem}
-    .cta-row{display:flex;flex-direction:column;gap:.65rem;margin:1.2rem 0 .9rem}.cta-row .btn{width:100%}
-    .micro{color:var(--muted);font-size:.88rem}
+    .hero{position:relative;min-height:auto;padding:0;overflow:hidden;background:linear-gradient(180deg,rgba(212,163,115,.04),rgba(26,15,30,0) 38%)}
+    .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+    .hero::before{width:min(620px,90vw);height:min(620px,90vw);right:-14%;bottom:-24%;background:rgba(212,163,115,.08)}
+    .hero::after{width:min(520px,80vw);height:min(520px,80vw);left:-12%;top:-22%;background:rgba(255,255,255,.04)}
+    .hero-grid{display:flex;flex-direction:column;gap:0;min-height:inherit;position:relative;z-index:1}
+    .hero-media{position:absolute;inset:0;min-height:100%;border:0;border-radius:0;overflow:hidden;background:radial-gradient(circle at 30% 20%,rgba(212,163,115,.22),transparent 55%),linear-gradient(135deg,rgba(212,163,115,.18),rgba(42,24,40,.88))}
+    .hero-img{transform:scale(1.03);transition:transform var(--motion-slow) var(--motion-ease)}
+    .hero-media.is-loaded .hero-img{transform:scale(1)}
+    .hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,15,30,.1) 0%,rgba(26,15,30,.45) 55%,rgba(26,15,30,.88) 100%);pointer-events:none}
+    .hero-fallback{position:absolute;inset:auto 1rem 1rem 1rem;padding:1rem;color:var(--text-secondary);font-size:.9rem;z-index:1}
+    .hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;min-height:auto;padding:var(--space-6) 0 var(--space-5)}
+    .hero-stat{color:var(--text-secondary);font-size:.95rem;max-width:42ch}
+    .hero-subline{color:var(--text-muted);font-size:.9rem;max-width:44ch;margin-top:var(--space-2)}
+    .hero-stats{display:none;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3);margin-top:var(--space-4)}
+    .stat-tile{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:var(--space-4)}
+    .stat-tile .big{font-family:"Cormorant Infant",serif;font-size:1.75rem;color:var(--gold);line-height:1}
+    .stat-tile .small{font-size:.8125rem;color:var(--text-secondary);margin-top:var(--space-2);line-height:1.45}
+    .stat-tile .label{font-family:"DM Mono",monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-2);display:block}
+    .hero-chips{display:none;flex-wrap:wrap;gap:var(--space-2);list-style:none;margin-top:var(--space-4)}
+    .hero-chips li{font-size:.75rem;font-family:"DM Mono",monospace;color:var(--text-secondary);padding:var(--space-2) var(--space-3);border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+    .cta-row{display:flex;flex-direction:column;gap:var(--space-3);margin:var(--space-5) 0 var(--space-4)}.cta-row .btn{width:100%}
 
-    .strip{padding:1.1rem 0;border-block:1px solid var(--line);background:rgba(255,255,255,.02)}
-    .strip .wrap{display:grid;grid-template-columns:1fr;gap:.75rem}
-    .trust-pill{display:flex;gap:.65rem;align-items:flex-start;font-size:.88rem;color:var(--muted);line-height:1.45}
-    .trust-pill strong{color:var(--text);display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.15rem}
+    .strip{padding:var(--space-5) 0;border-block:1px solid var(--line);background:rgba(255,255,255,.02)}
+    .strip-inner{display:grid;grid-template-columns:1fr;gap:var(--space-5)}
+    .trust-visual{display:flex;gap:.55rem;justify-content:center}
+    .trust-thumb{width:4.5rem;height:4.5rem;border-radius:18px;border:1px solid rgba(212,163,115,.35);overflow:hidden;background:linear-gradient(135deg,rgba(212,163,115,.18),rgba(42,24,40,.95));flex-shrink:0}
+    .trust-pills{display:grid;grid-template-columns:1fr;gap:var(--space-3)}
+    .trust-pill{font-size:.88rem;color:var(--text-secondary);line-height:1.5;padding:var(--space-4);border-radius:18px;background:var(--panel);border:1px solid var(--line)}
+    .trust-pill strong{color:var(--gold);display:block;font-size:.75rem;font-family:"DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--space-2)}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:.9rem;margin-top:1.2rem}
-    .card{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:1.15rem;transition:border-color var(--motion-base) var(--motion-ease),background-color var(--motion-base) var(--motion-ease)}
-    .card:hover,.card:focus-within{border-color:rgba(200,169,106,.42);background:color-mix(in srgb,var(--panel) 92%,var(--gold) 8%)}
+    .grid{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-5)}
+    .pain-grid{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-5)}
+    .pain-featured{background:var(--panel-soft);border:1px solid var(--line);padding:var(--space-5);border-radius:22px}
+    .pain-featured h3{font-size:1.85rem;color:var(--text)}
+    .pain-icon{width:2rem;height:2rem;color:var(--gold);flex-shrink:0;margin-top:.15rem}
+    .pain-featured .pain-head{display:flex;gap:var(--space-3);align-items:flex-start;padding-bottom:var(--space-4);border-bottom:1px solid var(--line)}
+    .card{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:var(--space-5);transition:border-color var(--motion-base) var(--motion-ease),background-color var(--motion-base) var(--motion-ease)}
+    .card:hover,.card:focus-within{border-color:rgba(212,163,115,.35);background:color-mix(in srgb,var(--panel) 94%,var(--gold) 6%)}
+    .section-panel{border:1px solid var(--line);border-radius:26px;overflow:hidden}
+    .section-head{background:var(--panel-soft);color:var(--text);padding:var(--space-5);border-bottom:3px solid var(--gold)}
+    .section-head h2{color:var(--text);max-width:none}
+    .section-head .intro{color:var(--text-secondary);max-width:64ch}
+    .section-head-soft{background:var(--panel-soft);color:var(--text);padding:var(--space-5);border-bottom:1px solid var(--line)}
+    .section-head-soft h2{color:var(--text);max-width:none}
+    .section-head-soft .intro{color:var(--text-secondary)}
+    .section-body{padding:var(--space-5);background:var(--panel)}
+    .section-body .offers-grid{margin-top:0}
+    .section-body .grid{margin-top:0}
     .service{background:var(--panel);display:flex;flex-direction:column;justify-content:space-between;gap:1rem;position:relative}
-    .service.featured{border-color:rgba(200,169,106,.55);background:linear-gradient(165deg,var(--panel-soft),rgba(200,169,106,.12));box-shadow:0 12px 32px rgba(0,0,0,.28)}
-    .badge-recommended{position:absolute;top:.85rem;right:.85rem;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:#18120d;background:var(--gold);padding:.25rem .55rem;border-radius:999px;font-weight:700}
-    .price{font-size:2.5rem;font-family:"Cormorant Garamond",serif;line-height:1}
-    .meta-list{list-style:none;display:grid;gap:.45rem;margin-top:.8rem;color:var(--muted)}
+    .service.featured{border-color:rgba(212,163,115,.4);background:linear-gradient(145deg,var(--panel-soft),rgba(212,163,115,.08));box-shadow:var(--glow-soft)}
+    .badge-recommended{position:absolute;top:.85rem;right:.85rem;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#1a0f1e;background:linear-gradient(135deg,var(--gold),var(--gold-deep));padding:.25rem .55rem;border-radius:999px;font-weight:700;font-family:"DM Mono",monospace}
+    .offer-hook{color:var(--gold);font-size:.88rem;margin-top:.35rem;font-weight:500}
+    .price{font-size:2.5rem;font-family:"Cormorant Infant",serif;line-height:1;color:var(--gold)}
+    .meta-list{list-style:none;display:grid;gap:var(--space-2);margin-top:var(--space-3);color:var(--text-secondary)}
     .meta-list li strong{color:var(--text)}
+    .offers-grid{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-5)}
+    .offers-compare{display:none;margin-top:1.5rem;width:100%;border-collapse:collapse;font-size:.88rem}
+    .offers-compare th,.offers-compare td{border:1px solid var(--line);padding:.65rem .75rem;text-align:left;vertical-align:top}
+    .offers-compare th{background:var(--panel-soft);color:var(--text);font-weight:600}
+    .offers-compare td{color:var(--text-secondary)}
+    .offers-compare .col-featured{background:linear-gradient(165deg,var(--panel-soft),rgba(212,163,115,.06))}
+    .offers-compare-caption{margin-top:var(--space-3);font-size:.82rem;color:var(--text-muted)}
 
-    .case-copy{padding:1.35rem;border:1px solid var(--line);background:linear-gradient(160deg,var(--panel-soft),rgba(200,169,106,.08));border-radius:var(--r)}
-    .testimonial{margin-top:1rem;padding:1rem;border:1px dashed rgba(200,169,106,.58);border-radius:12px;color:#e7d7bf;background:linear-gradient(150deg,var(--panel-soft),rgba(200,169,106,.1))}
-    .testimonial-attribution{display:block;margin-top:.75rem;font-size:.88rem;color:var(--muted);font-style:normal}
-    .ph-fallback{padding:.75rem;color:var(--muted);font-size:.82rem;text-align:center;line-height:1.4}
-    .proof{margin-top:1rem;color:var(--muted);font-size:.95rem}
-    .trust-note{margin-top:1rem;padding:.9rem;border-radius:12px;background:linear-gradient(145deg,var(--panel-soft),rgba(200,169,106,.1));font-size:.92rem}
+    .case-study-grid{display:grid;grid-template-columns:1fr;gap:var(--space-5)}
+    .case-mosaic{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+    .case-copy{padding:var(--space-5);border:1px solid var(--line);background:var(--panel-soft);border-radius:var(--r)}
+    .callout{border-radius:18px;padding:1rem 1.15rem;margin:1rem 0;display:flex;gap:.85rem;align-items:flex-start}
+    .callout.dark{background:var(--panel-soft);border-top:3px solid var(--gold)}
+    .callout.light{background:rgba(212,163,115,.12);border-top:3px solid var(--gold)}
+    .section-lead{text-align:center;margin-inline:auto;margin-bottom:var(--space-5)}
+    .section-lead h2{margin-inline:auto;max-width:22ch}
+    .section-lead .intro,.section-lead .portfolio-lede{margin-inline:auto}
+    .callout p{font-size:.92rem;margin:0}
+    .testimonial{margin-top:1rem;padding:0;border:none;border-radius:0;background:transparent}
+    .testimonial-featured{margin-top:0;margin-bottom:1rem;padding:0;border:none;position:relative}
+    .testimonial-featured::before{display:none}
+    .testimonial-featured p{padding-left:0}
+    .testimonial-attribution{display:block;margin-top:var(--space-3);font-size:.88rem;color:var(--text-secondary);font-style:normal;font-weight:600}
+    .testimonial-featured .testimonial-attribution{color:var(--text-secondary);font-weight:600}
+    .ph-fallback{padding:var(--space-3);color:var(--text-muted);font-size:.82rem;text-align:center;line-height:1.4}
+    .proof{margin-top:var(--space-4);color:var(--text-secondary);font-size:.95rem}
+    .trust-note{margin-top:1rem;font-size:.92rem}
+    .ph-mosaic-hero{grid-column:span 2;aspect-ratio:16/10;position:relative}
+    .ph-caption{position:absolute;left:.75rem;bottom:.75rem;padding:var(--space-2) var(--space-3);border-radius:999px;font-size:.75rem;font-family:"DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;background:rgba(26,15,30,.85);border:1px solid var(--line);color:var(--text)}
 
-    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.65rem}
-    .portfolio-group{margin-top:1.6rem}.portfolio-group h3{font-size:1.5rem;margin-bottom:.55rem}
-    .ph{border:1px solid var(--line);border-radius:14px;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(135deg,rgba(200,169,106,.14),rgba(28,22,17,.95))}
+    .portfolio-lede{color:var(--text-secondary);margin-top:var(--space-2);max-width:54ch;font-size:.95rem}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+    .portfolio-group{margin-top:var(--space-6)}
+    .tag-pill{display:inline-block;background:rgba(212,163,115,.15);color:var(--gold);border-radius:999px;padding:var(--space-1) var(--space-3);font-family:"DM Mono",monospace;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--space-2)}
+    .portfolio-group h3{font-size:1.5rem;margin-bottom:.55rem}
+    .ph{border:1px solid var(--line);border-radius:14px;aspect-ratio:4/5;overflow:hidden;background:radial-gradient(circle at 35% 25%,rgba(212,163,115,.2),transparent 50%),linear-gradient(135deg,rgba(212,163,115,.14),rgba(42,24,40,.95))}
+    .ph-featured{grid-column:span 2;aspect-ratio:16/10}
 
-    details{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:.85rem 1rem}
+    .step-card{position:relative;padding-top:.25rem}
+    .step-card::before{content:attr(data-step);display:flex;align-items:center;justify-content:center;width:2.1rem;height:2.1rem;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#1a0f1e;border-radius:50%;font-family:"DM Mono",monospace;font-weight:700;font-size:.78rem;margin-bottom:.75rem}
+    .step-card .kicker{display:none}
+
+    details{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:.85rem 1rem;transition:border-color var(--motion-base) var(--motion-ease),background-color var(--motion-base) var(--motion-ease)}
+    details:hover,details[open]{border-color:rgba(212,163,115,.35);background:rgba(255,255,255,.06)}
     details+details{margin-top:.7rem}summary{cursor:pointer;font-weight:600}
-    .final-cta{padding:2rem 1.15rem;border:1px solid var(--line);border-radius:1.3rem;background:linear-gradient(145deg,var(--panel-soft),rgba(200,169,106,.12));text-align:center}
+    summary:hover{color:var(--gold)}
+    #contact .final-cta{padding-bottom:1rem}
+    #contact{padding-bottom:7.5rem}
+    .final-cta{max-width:40rem;margin-inline:auto;padding:var(--space-6) var(--space-5);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:1.3rem;background:var(--panel-soft);text-align:center}
+    .final-cta .kicker,.final-cta h2,.final-cta .intro.contact-lead,.final-cta .contact-outcome,.final-cta .contact-note{margin-inline:auto;text-align:center}
+    .final-cta h2{max-width:24ch}
     .final-cta .intro.contact-lead{margin:1rem auto}
+    .contact-outcome{color:var(--text);font-size:.95rem;margin:.75rem auto 0;max-width:36ch}
     .enquiry-form{max-width:28rem;margin:1.25rem auto 0;text-align:left;display:grid;gap:.75rem}
-    .enquiry-form label{display:grid;gap:.3rem;font-size:.88rem;color:var(--muted)}
-    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;min-height:48px;padding:.55rem .75rem;border-radius:12px;border:1px solid var(--line);background:rgba(20,16,12,.65);color:var(--text);font:inherit}
+    .enquiry-form label{display:grid;gap:.3rem;font-size:.88rem;color:var(--text-secondary)}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;min-height:48px;padding:.55rem .75rem;border-radius:12px;border:1px solid var(--line);background:var(--panel-soft);color:var(--text);font:inherit;transition:border-color var(--motion-base) var(--motion-ease)}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{border-color:var(--gold);outline:none}
     .enquiry-form textarea{min-height:96px;resize:vertical}
     .enquiry-form .btn{width:100%;margin-top:.25rem;border:none;cursor:pointer;font:inherit}
-    .form-status{min-height:1.25rem;font-size:.88rem;color:var(--muted);text-align:center}
-    .form-status.ok{color:#c8e6b8}.form-status.err{color:#e8b4b4}
-    .contact-note{margin-top:.85rem;color:var(--muted);font-size:.88rem}
+    .form-status{min-height:1.25rem;font-size:.88rem;color:var(--text-secondary);text-align:center}
+    .form-status.ok{color:#b8e6c8}.form-status.err{color:#e8b4b4}
+    .contact-note{margin-top:var(--space-4);color:var(--text-muted);font-size:.88rem}
     .contact-note a{text-decoration:underline;text-underline-offset:2px}
     .sticky-cta{position:fixed;left:.75rem;right:.75rem;bottom:.75rem;z-index:40}
     .sticky-cta .btn{width:100%;box-shadow:0 14px 28px rgba(0,0,0,.4)}
-    .sticky-cta .btn.primary{background:linear-gradient(135deg,#e1c58b,var(--gold));border-color:#e1c58b;color:#120d09}
+    .sticky-cta .btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold-deep));border-color:var(--gold);color:#1a0f1e}
     .sticky-safe{padding-bottom:6.2rem}
-    footer{padding:1.8rem 0 5.8rem;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+    footer{background:var(--panel-soft);padding:0 0 5.8rem;border-top:1px solid var(--line);color:var(--text-secondary);font-size:.88rem}
+    .footer-strip{padding:var(--space-4) 0;background:rgba(0,0,0,.2);border-bottom:1px solid var(--line);font-family:"DM Mono",monospace;font-size:.75rem;letter-spacing:.04em;color:var(--text-muted)}
+    .footer-strip strong{color:var(--gold);font-weight:500}
+    .footer-body{padding:1.25rem 0 0}
 
-
-    .reveal{opacity:0;transform:translateY(8px);transition:opacity var(--motion-slow) var(--motion-ease),transform var(--motion-slow) var(--motion-ease)}
+    .reveal{opacity:0;transform:translateY(10px);transition:opacity var(--motion-slow) var(--motion-ease),transform var(--motion-slow) var(--motion-ease)}
     .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .reveal[data-reveal-delay="1"]{transition-delay:60ms}
+    .reveal[data-reveal-delay="2"]{transition-delay:120ms}
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto}
       *,*::before,*::after{animation:none !important;transition:none !important}
       .reveal,.reveal.is-visible{opacity:1;transform:none}
+      .hero-img{transform:none}
     }
 
     @media (min-width:760px){
-      section{padding:5rem 0}.cta-row{flex-direction:row}.cta-row .btn{width:auto}.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
-      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.portfolio-grid{grid-template-columns:repeat(4,1fr)}
+      section{padding:var(--space-10) 0}.cta-row{flex-direction:row}.cta-row .btn{width:auto}
+      .links{display:flex;font-size:.82rem;gap:.65rem}
+      .offers-compare{display:table}
+      #contact{padding-bottom:3rem}
+      .trust-pills{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .portfolio-grid{grid-template-columns:repeat(4,1fr)}
+      .ph-featured{grid-column:span 2}
       .sticky-cta{display:none}footer{padding-bottom:1.8rem}
     }
     @media (min-width:1024px){
-      .links{display:flex}.hero-grid{grid-template-columns:1.03fr .97fr}.hero-media{min-height:34rem}.strip .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}
-      .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-grid{grid-template-columns:repeat(5,1fr)}
+      .links{font-size:.9rem;gap:1rem}
+      .hero{padding:0 0 2rem}
+      .hero-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:1.4rem;align-items:end;padding:2.8rem 0 2rem}
+      .hero-media{position:relative;inset:auto;min-height:38rem;border:1px solid var(--line);border-radius:1.35rem}
+      .hero-scrim{background:linear-gradient(180deg,transparent 50%,rgba(26,15,30,.35) 100%)}
+      .hero-copy{min-height:auto;padding:0;justify-content:flex-start;grid-column:1}
+      .hero-media{grid-column:2}
+      .hero-media .hero-img{min-height:38rem}
+      .hero-stats{display:grid}
+      .hero-stat,.hero-subline{display:none}
+      .trust-pills{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .strip-inner{grid-template-columns:auto 1fr;align-items:center;gap:1.25rem}
+      .pain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .pain-featured{grid-column:span 2}
+      .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .offers-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .offers-featured{grid-column:1/-1;max-width:38rem;margin-inline:auto;width:100%;box-shadow:var(--glow-soft)}
+      .case-study-grid{grid-template-columns:1.2fr .8fr;align-items:start}
+      .portfolio-grid{grid-template-columns:repeat(5,1fr)}
     }
   </style>
 </head>
 <body class="sticky-safe">
-<header><nav class="wrap"><a class="brand" href="#top">Artspectiv Studio · New Barnet</a><div class="links"><a href="#offers">Packages</a><a href="#case-study">Rita's Café</a><a href="#portfolio">Portfolio</a><a href="#faq">FAQ</a></div><a class="btn primary" href="#contact">Request a content shoot</a></nav></header>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header><nav class="wrap"><div class="brand-wrap"><a class="brand" href="#top">Artspectiv Studio</a><span class="brand-pill">New Barnet</span></div><div class="links"><a href="#offers">Packages</a><a href="#process">Process</a><a href="#case-study">Rita's Café</a><a href="#portfolio">Portfolio</a><a href="#faq">FAQ</a></div><a class="btn primary" href="#contact">Request a content shoot</a></nav></header>
 <main id="top">
-<section class="hero reveal"><div class="wrap hero-grid"><div class="stack"><p class="kicker">Premium local content studio</p><h1>Your business looks better in real life. Let's make the internet catch up.</h1><p class="intro">Premium photo, reel and social posting support for cafés, bars, salons and local brands across North London.</p><div class="cta-row"><a class="btn primary" href="#contact">Request a content shoot</a><a class="btn" href="#portfolio">View the work</a></div><p class="micro">Based in New Barnet · Built for Instagram, Google and booking platforms · Content delivered in 5 to 7 business days</p></div><figure class="hero-media"><img src="assets/rita-hero.jpg" alt="Editorial style brunch and coffee content" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<figcaption class=\'hero-fallback\'>Hero image unavailable. Refresh shortly or email hello@artspectivstudio.co.uk.</figcaption>');"></figure></div></section>
+<section class="hero" aria-label="Introduction">
+  <div class="wrap hero-grid">
+    <div class="stack hero-copy">
+      <p class="kicker">Premium local content studio</p>
+      <h1>Your business looks better in real life. Let's make the internet catch up.</h1>
+      <p class="intro">Premium photo, reel and social posting support for cafés, bars, salons and local brands across North London.</p>
+      <p class="hero-stat"><span class="gold-accent">24 images + 4 reels</span> / month for cafés, salons and bars that post weekly.</p>
+      <p class="hero-subline">Most independents start with Monthly Content Bank.</p>
+      <div class="hero-stats" aria-label="Package highlights">
+        <div class="stat-tile"><span class="label">Monthly</span><div class="big">24+4</div><div class="small">images and reels per month</div></div>
+        <div class="stat-tile"><span class="label">Turnaround</span><div class="big">5–7</div><div class="small">business days after shoot</div></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Request a content shoot</a>
+        <a class="btn secondary" href="#portfolio">View the work</a>
+      </div>
+      <ul class="hero-chips" aria-label="Studio highlights">
+        <li>New Barnet</li>
+        <li>5–7 days</li>
+        <li>IG + Google</li>
+      </ul>
+    </div>
+    <figure class="hero-media">
+      <img class="hero-img" src="assets/rita-hero.jpg" alt="Editorial style brunch and coffee content" width="1600" height="2000" fetchpriority="high" onload="this.closest('.hero-media').classList.add('is-loaded')" onerror="this.style.display='none';this.closest('.hero-media').classList.add('is-loaded');this.insertAdjacentHTML('afterend','<figcaption class=\'hero-fallback\'>Hero image unavailable. Refresh shortly.</figcaption>');">
+      <div class="hero-scrim" aria-hidden="true"></div>
+    </figure>
+  </div>
+</section>
 
-<div class="strip reveal" aria-label="Trust highlights"><div class="wrap"><p class="trust-pill"><strong>New Barnet</strong> Based locally, serving North London independents.</p><p class="trust-pill"><strong>Platforms</strong> Content built for Instagram, Google Business Profile and booking apps.</p><p class="trust-pill"><strong>Turnaround</strong> Most shoots delivered in 5 to 7 business days with one light revision round.</p></div></div>
+<div class="strip reveal" aria-label="Trust highlights">
+  <div class="wrap strip-inner">
+    <div class="trust-visual" aria-hidden="true">
+      <figure class="trust-thumb"><img src="assets/rita-hero.jpg" alt="" loading="lazy" width="72" height="72" onerror="window.phFallback(this)"></figure>
+      <figure class="trust-thumb"><img src="assets/portfolio-food-01.jpg" alt="" loading="lazy" width="72" height="72" onerror="window.phFallback(this)"></figure>
+      <figure class="trust-thumb"><img src="assets/portfolio-beauty-01.jpg" alt="" loading="lazy" width="72" height="72" onerror="window.phFallback(this)"></figure>
+    </div>
+    <div class="trust-pills">
+      <p class="trust-pill"><strong>Shoot locally</strong> Based in New Barnet, serving North London independents.</p>
+      <p class="trust-pill"><strong>Built for booking apps</strong> Content shaped for Instagram, Google Business Profile and booking platforms.</p>
+      <p class="trust-pill"><strong>Delivered in 5–7 days</strong> Most shoots land within one week, with one light revision round.</p>
+    </div>
+  </div>
+</div>
 
-<section class="reveal"><div class="wrap"><h2>Your venue has the atmosphere. Your feed just needs to prove it.</h2><div class="grid three"><article class="card reveal"><h3>Your Instagram looks inconsistent.</h3><p class="intro">Strong service can still look patchy when content is created between shifts and stock runs.</p></article><article class="card reveal"><h3>Your Google photos are old or flat.</h3><p class="intro">First impressions get weaker when search photos no longer match what customers see in person.</p></article><article class="card reveal"><h3>Your best dishes or services are not being sold visually.</h3><p class="intro">Appetite, trust and booking confidence are lost when key moments are missing from your content.</p></article></div></div></section>
+<section id="main-content" class="reveal"><div class="wrap"><div class="section-lead"><h2>Your venue has the atmosphere. Your feed just needs to prove it.</h2></div><div class="pain-grid"><article class="card pain-featured reveal"><div class="pain-head"><svg class="pain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="18" cy="12" r="3"/></svg><div><h3>Your best dishes and services are not being sold visually.</h3><p class="intro">Appetite, trust and booking confidence drop when key moments never make it into your feed.</p></div></div></article><article class="card reveal"><h3>Your Instagram looks inconsistent.</h3><p class="intro">Strong service still looks patchy when content is shot between shifts or pulled from stock.</p></article><article class="card reveal"><h3>Your Google photos are old or flat.</h3><p class="intro">Search first impressions weaken when photos no longer match what customers see in person.</p></article></div></div></section>
 
-<section id="offers" class="reveal"><div class="wrap"><h2>Productised packages built for fast decisions.</h2><p class="intro">Starter proves the fit. Monthly builds your content engine. Campaign adds focused pushes for launches and seasonal moments.</p><div class="grid three"><article class="card service reveal"><div><h3>Starter Content Shoot</h3><p class="price">from £445</p><ul class="meta-list"><li><strong>Deliverables:</strong> 12 edited images, 2 short reels, caption prompts</li><li><strong>Posting support:</strong> 1 week posting plan and upload checklist</li><li><strong>Turnaround:</strong> 5 to 7 business days</li><li><strong>Best for:</strong> first shoot and proof of fit</li></ul></div><a class="btn" href="#contact">Book starter shoot</a></article><article class="card service featured reveal"><span class="badge-recommended">Recommended</span><div><h3>Monthly Content Bank</h3><p class="price">from £945</p><ul class="meta-list"><li><strong>Deliverables:</strong> 24 edited images, 4 reels, Google-ready set</li><li><strong>Posting support:</strong> monthly posting calendar and scheduled upload support</li><li><strong>Turnaround:</strong> 5 to 7 business days after each shoot</li><li><strong>Best for:</strong> businesses posting weekly</li></ul></div><a class="btn primary" href="#contact">Build monthly content</a></article><article class="card service reveal"><div><h3>Campaign Content Day</h3><p class="price">from £1,595</p><ul class="meta-list"><li><strong>Deliverables:</strong> 40 edited images, 8 reels, campaign shot list</li><li><strong>Posting support:</strong> campaign rollout plan and launch-week posting support</li><li><strong>Turnaround:</strong> 7 business days</li><li><strong>Best for:</strong> launches, menu updates and events</li></ul></div><a class="btn" href="#contact">Plan a campaign day</a></article></div></div></section>
+<section id="offers" class="reveal"><div class="wrap"><div class="section-panel"><div class="section-head"><h2>Productised packages built for fast decisions.</h2><p class="intro">Starter proves the fit. Monthly builds your content engine. Campaign adds focused pushes for launches and seasonal moments.</p></div><div class="section-body"><div class="offers-grid"><article class="card service featured offers-featured reveal"><span class="badge-recommended">Recommended</span><div><h3>Monthly Content Bank</h3><p class="price">from £945</p><p class="offer-hook">Most New Barnet independents start here.</p><ul class="meta-list"><li><strong>Deliverables:</strong> 24 edited images, 4 reels, Google-ready set</li><li><strong>Posting support:</strong> monthly posting calendar and scheduled upload support</li><li><strong>Turnaround:</strong> 5 to 7 business days after each shoot</li><li><strong>Best for:</strong> businesses posting weekly</li></ul></div><a class="btn primary" href="#contact">Build monthly content</a></article><article class="card service reveal" data-reveal-delay="1"><div><h3>Starter Content Shoot</h3><p class="price">from £445</p><ul class="meta-list"><li><strong>Deliverables:</strong> 12 edited images, 2 short reels, caption prompts</li><li><strong>Posting support:</strong> 1 week posting plan and upload checklist</li><li><strong>Turnaround:</strong> 5 to 7 business days</li><li><strong>Best for:</strong> first shoot and proof of fit</li></ul></div><a class="btn" href="#contact">Book starter shoot</a></article><article class="card service reveal" data-reveal-delay="2"><div><h3>Campaign Content Day</h3><p class="price">from £1,595</p><ul class="meta-list"><li><strong>Deliverables:</strong> 40 edited images, 8 reels, campaign shot list</li><li><strong>Posting support:</strong> campaign rollout plan and launch-week posting support</li><li><strong>Turnaround:</strong> 7 business days</li><li><strong>Best for:</strong> launches, menu updates and events</li></ul></div><a class="btn" href="#contact">Plan a campaign day</a></article></div><div class="offers-compare-wrap reveal"><table class="offers-compare" aria-label="Package comparison"><caption class="offers-compare-caption">Compare packages at a glance. Full detail in each card above.</caption><thead><tr><th scope="col"></th><th scope="col">Starter</th><th scope="col" class="col-featured">Monthly</th><th scope="col">Campaign</th></tr></thead><tbody><tr><th scope="row">From</th><td>£445</td><td class="col-featured">£945</td><td>£1,595</td></tr><tr><th scope="row">Deliverables</th><td>12 images, 2 reels</td><td class="col-featured">24 images, 4 reels</td><td>40 images, 8 reels</td></tr><tr><th scope="row">Turnaround</th><td>5 to 7 business days</td><td class="col-featured">5 to 7 business days</td><td>7 business days</td></tr><tr><th scope="row">Best for</th><td>Proof of fit</td><td class="col-featured">Weekly posting</td><td>Launches and events</td></tr></tbody></table></div></div></div></div></section>
 
-<section id="case-study" class="reveal"><div class="wrap grid" style="margin-top:0"><article class="case-copy reveal"><h2>Case study: Rita's Café</h2><p class="intro"><strong>Client:</strong> Rita's Café. <strong>Goal:</strong> make the café feel active, warm and visually consistent online.</p><p class="intro"><strong>Output:</strong> brunch photography, reels, captions, posting prompts and a practical content rhythm.</p><p class="intro"><strong>Use:</strong> Instagram, Google Business Profile and outreach proof.</p><p class="proof"><strong>Proof stack:</strong> Rita's Café · artspectiv · plateddrama / plateddramaaa</p><p class="testimonial">“Sid brought a clear vision from day one and kept the whole process simple for our team. He listened to what mattered in service, translated it into content we could actually use, and made our brand feel more consistent online. We especially appreciated his dedication and the practical ideas he shared throughout the project.”<br><span class="testimonial-attribution">— Owner, Rita's Café, New Barnet</span></p><p class="trust-note"><strong>Booking confidence:</strong> clear shot plan before shoot day, one light revision round, and delivery timeline confirmed in writing.</p></article><div class="portfolio-grid"><figure class="ph reveal"><img src="assets/rita-01.jpg" alt="Rita's Café brunch plate" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/rita-02.jpg" alt="Rita's Café coffee and pastry" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/rita-03.jpg" alt="Rita's Café interior ambience" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/rita-04.jpg" alt="Rita's Café service moment" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/rita-05.jpg" alt="Rita's Café detail texture" onerror="window.phFallback(this)"></figure></div></div></section>
+<section id="case-study" class="reveal"><div class="wrap case-study-grid"><div class="case-mosaic"><figure class="ph ph-mosaic-hero reveal"><img src="assets/rita-01.jpg" alt="Rita's Café brunch plate" width="1200" height="750" loading="lazy" onerror="window.phFallback(this)"><figcaption class="ph-caption">Rita's Café · New Barnet</figcaption></figure><figure class="ph reveal" data-reveal-delay="1"><img src="assets/rita-02.jpg" loading="lazy" alt="Rita's Café coffee and pastry" width="1200" height="1500" onerror="window.phFallback(this)"></figure><figure class="ph reveal" data-reveal-delay="2"><img src="assets/rita-03.jpg" loading="lazy" alt="Rita's Café interior ambience" width="1200" height="1500" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/rita-04.jpg" loading="lazy" alt="Rita's Café service moment" width="1200" height="1500" onerror="window.phFallback(this)"></figure><figure class="ph reveal" data-reveal-delay="1"><img src="assets/rita-05.jpg" loading="lazy" alt="Rita's Café detail texture" width="1200" height="1500" onerror="window.phFallback(this)"></figure></div><article class="case-copy reveal"><h2>Case study: Rita's Café</h2><blockquote class="testimonial testimonial-featured callout dark"><p>“Sid brought a clear vision from day one and kept the whole process simple for our team. He listened to what mattered in service, translated it into content we could actually use, and made our brand feel more consistent online.”</p><span class="testimonial-attribution">— Owner, Rita's Café, New Barnet</span></blockquote><p class="intro"><strong>Goal:</strong> make the café feel active, warm and visually consistent online.</p><p class="intro"><strong>Output:</strong> brunch photography, reels, captions and a practical posting rhythm.</p><p class="proof"><strong>Proof stack:</strong> Rita's Café · artspectiv · plateddramaaa</p><p class="trust-note callout light"><strong>Booking confidence:</strong> clear shot plan before shoot day, one light revision round, and delivery timeline confirmed in writing.</p></article></div></section>
 
-<section id="portfolio" class="reveal"><div class="wrap"><h2>Curated portfolio</h2><div class="portfolio-group reveal"><h3>Food and brunch</h3><div class="portfolio-grid"><figure class="ph reveal"><img src="assets/portfolio-food-01.jpg" alt="Food and brunch visual" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/portfolio-food-02.jpg" alt="Food and brunch texture" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><h3>Bars and drinks</h3><div class="portfolio-grid"><figure class="ph reveal"><img src="assets/portfolio-drinks-01.jpg" alt="Bar and drink visual" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/portfolio-drinks-02.jpg" alt="Cocktail and pour detail" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><h3>Salons and beauty</h3><div class="portfolio-grid"><figure class="ph reveal"><img src="assets/portfolio-beauty-01.jpg" alt="Salon and beauty treatment visual" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/portfolio-beauty-02.jpg" alt="Beauty detail and trust-led visual" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><h3>Interiors and ambience</h3><div class="portfolio-grid"><figure class="ph reveal"><img src="assets/portfolio-interior-01.jpg" alt="Interior ambience" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/portfolio-interior-02.jpg" alt="Interior styling" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><h3>People and service</h3><div class="portfolio-grid"><figure class="ph reveal"><img src="assets/portfolio-people-01.jpg" alt="People and service" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/portfolio-people-02.jpg" alt="Service detail" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><h3>Details and texture</h3><div class="portfolio-grid"><figure class="ph reveal"><img src="assets/portfolio-detail-01.jpg" alt="Detail and texture shot" onerror="window.phFallback(this)"></figure><figure class="ph reveal"><img src="assets/portfolio-detail-02.jpg" alt="Close detail visual" onerror="window.phFallback(this)"></figure></div></div></div></section>
+<section id="portfolio" class="reveal"><div class="wrap"><div class="section-lead"><h2>Curated portfolio</h2><p class="portfolio-lede">A sample of shoots across food, drinks, beauty and interiors — built for Instagram, Google and booking platforms.</p></div><div class="portfolio-group reveal"><span class="tag-pill">Food</span><h3>Food and brunch</h3><div class="portfolio-grid"><figure class="ph ph-featured reveal"><img src="assets/portfolio-food-01.jpg" alt="Food and brunch visual" width="1000" height="625" loading="lazy" onerror="window.phFallback(this)"></figure><figure class="ph reveal" data-reveal-delay="1"><img src="assets/portfolio-food-02.jpg" alt="Food and brunch texture" width="1000" height="1250" loading="lazy" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><span class="tag-pill">Drinks</span><h3>Bars and drinks</h3><div class="portfolio-grid"><figure class="ph ph-featured reveal"><img src="assets/portfolio-drinks-01.jpg" alt="Bar and drink visual" width="1000" height="625" loading="lazy" onerror="window.phFallback(this)"></figure><figure class="ph reveal" data-reveal-delay="1"><img src="assets/portfolio-drinks-02.jpg" alt="Cocktail and pour detail" width="1000" height="1250" loading="lazy" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><span class="tag-pill">Beauty</span><h3>Salons and beauty</h3><div class="portfolio-grid"><figure class="ph ph-featured reveal"><img src="assets/portfolio-beauty-01.jpg" alt="Salon and beauty treatment visual" width="1000" height="625" loading="lazy" onerror="window.phFallback(this)"></figure><figure class="ph reveal" data-reveal-delay="1"><img src="assets/portfolio-beauty-02.jpg" alt="Beauty detail and trust-led visual" width="1000" height="1250" loading="lazy" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><span class="tag-pill">Interiors</span><h3>Interiors and ambience</h3><div class="portfolio-grid"><figure class="ph ph-featured reveal"><img src="assets/portfolio-interior-01.jpg" alt="Interior ambience" width="1000" height="625" loading="lazy" onerror="window.phFallback(this)"></figure><figure class="ph reveal" data-reveal-delay="1"><img src="assets/portfolio-interior-02.jpg" alt="Interior styling" width="1000" height="1250" loading="lazy" onerror="window.phFallback(this)"></figure></div></div><div class="portfolio-group reveal"><span class="tag-pill">Detail</span><h3>Service and detail</h3><div class="portfolio-grid"><figure class="ph ph-featured reveal"><img src="assets/portfolio-people-01.jpg" alt="People and service" width="1000" height="625" loading="lazy" onerror="window.phFallback(this)"></figure><figure class="ph reveal" data-reveal-delay="1"><img src="assets/portfolio-detail-01.jpg" alt="Detail and texture shot" width="1000" height="1250" loading="lazy" onerror="window.phFallback(this)"></figure></div></div></div></section>
 
-<section class="reveal"><div class="wrap"><h2>Low effort process for busy owners.</h2><div class="grid three"><article class="card reveal"><h3>Plan</h3><p class="intro">I pick your content pillars and shot priorities before shoot day.</p></article><article class="card reveal"><h3>Shoot</h3><p class="intro">One focused session planned around your quieter business hours.</p></article><article class="card reveal"><h3>Package</h3><p class="intro">Edited images, reels, prompts and posting guidance, ready for Instagram, Google and booking platforms.</p></article></div></div></section>
+<section id="process" class="reveal"><div class="wrap"><div class="section-panel"><div class="section-head-soft"><h2>Low effort process for busy owners.</h2></div><div class="section-body"><div class="grid three"><article class="card step-card reveal" data-step="01"><p class="kicker" aria-hidden="true">01</p><h3 id="process-plan">Plan</h3><p class="intro">I pick your content pillars and shot priorities before shoot day.</p></article><article class="card step-card reveal" data-step="02"><p class="kicker" aria-hidden="true">02</p><h3 id="process-shoot">Shoot</h3><p class="intro">One focused session planned around your quieter business hours.</p></article><article class="card step-card reveal" data-step="03"><p class="kicker" aria-hidden="true">03</p><h3 id="process-package">Package</h3><p class="intro">Edited images, reels, prompts and posting guidance, ready for Instagram, Google and booking platforms.</p></article></div></div></div></div></section>
 
-<section class="reveal"><div class="wrap"><h2>What is included and what is not.</h2><div class="grid three"><article class="card reveal"><h3>Included</h3><ul class="meta-list"><li>Planned shoot</li><li>Agreed deliverables</li><li>One light revision round</li><li>Clear turnaround</li></ul></article><article class="card reveal"><h3>Not included</h3><ul class="meta-list"><li>Daily community management</li><li>Full-time inbox management</li><li>Paid ads</li><li>Unlimited revisions</li></ul></article><article class="card reveal"><h3>Payment terms</h3><p class="intro">Starter: 50% deposit, 50% before delivery. Monthly retainers: paid monthly in advance. Posting support scope is agreed in advance.</p></article></div></div></section>
+<section id="terms" class="reveal"><div class="wrap"><div class="section-lead"><h2>What is included and what is not.</h2></div><div class="grid three"><article class="card reveal"><h3>Included</h3><ul class="meta-list"><li>Planned shoot</li><li>Agreed deliverables</li><li>One light revision round</li><li>Clear turnaround</li></ul></article><article class="card reveal"><h3>Not included</h3><ul class="meta-list"><li>Daily community management</li><li>Full-time inbox management</li><li>Paid Meta/TikTok ad management</li><li>Unlimited revisions</li></ul></article><article class="card reveal"><h3>Payment terms</h3><p class="intro">Starter: 50% deposit, 50% before delivery. Monthly retainers: paid monthly in advance. Posting support scope is agreed in advance.</p></article></div></div></section>
 
-<section id="faq" class="reveal"><div class="wrap"><h2>FAQ</h2><details open><summary>Do you only work with cafés?</summary><p class="intro">No. I also work with restaurants, bars, salons, nail studios, beauty clinics and local lifestyle brands.</p></details><details><summary>Can you shoot during quiet business hours?</summary><p class="intro">Yes. Sessions are planned around your quieter windows to reduce disruption.</p></details><details><summary>Do you manage posting too?</summary><p class="intro">Yes. I can support posting rhythm, scheduling guidance and platform-ready content rollout as part of the right package.</p></details><details><summary>How fast do I get the content?</summary><p class="intro">Most projects are delivered in 5 to 7 business days after the shoot.</p></details><details><summary>Can I start with one shoot?</summary><p class="intro">Yes. The Starter Content Shoot is designed for that.</p></details><details><summary>Do you cover salons and beauty clinics?</summary><p class="intro">Yes. Trust-led visuals for treatments, spaces, details and service are a core offer.</p></details><details><summary>What areas do you cover?</summary><p class="intro">Based in New Barnet, serving North London and nearby areas.</p></details></div></section>
+<section id="faq" class="reveal"><div class="wrap"><div class="section-lead"><h2>FAQ</h2></div><details open><summary>Do you only work with cafés?</summary><p class="intro">No. I also work with restaurants, bars, salons, nail studios, beauty clinics and local lifestyle brands.</p></details><details><summary>Can you shoot during quiet business hours?</summary><p class="intro">Yes. Sessions are planned around your quieter windows to reduce disruption.</p></details><details><summary>Do you manage posting too?</summary><p class="intro">Yes. I can support posting rhythm, scheduling guidance and platform-ready content rollout as part of the right package.</p></details><details><summary>How fast do I get the content?</summary><p class="intro">Most projects are delivered in 5 to 7 business days after the shoot.</p></details><details><summary>Can I start with one shoot?</summary><p class="intro">Yes. The Starter Content Shoot is designed for that.</p></details><details><summary>Do you cover salons and beauty clinics?</summary><p class="intro">Yes. Trust-led visuals for treatments, spaces, details and service are a core offer.</p></details><details><summary>What is the difference between content only and posting support?</summary><p class="intro">Content only means you receive edited images, reels and posting guidance to upload yourself. Content plus posting support adds a monthly calendar and scheduled upload help on the platforms we agree in advance — not full community management or inbox handling.</p></details><details><summary>What areas do you cover?</summary><p class="intro">Based in New Barnet, serving North London and nearby areas.</p></details></div></section>
 
-<section id="contact" class="reveal"><div class="wrap final-cta"><p class="kicker">Next step</p><h2>Want your business to look better online within one shoot?</h2><p class="intro contact-lead">Tell me your business name, Instagram handle, and whether you need content only or content plus posting support.</p><form id="enquiry-form" class="enquiry-form" method="POST" action=""><label>Business name<input type="text" name="business_name" required autocomplete="organization"></label><label>Instagram handle<input type="text" name="instagram" placeholder="@yourbusiness" autocomplete="off"></label><label>Package interest<select name="package_interest" required><option value="">Select a package</option><option value="Starter Content Shoot">Starter Content Shoot (from £445)</option><option value="Monthly Content Bank">Monthly Content Bank (from £945)</option><option value="Campaign Content Day">Campaign Content Day (from £1,595)</option><option value="Not sure yet">Not sure yet</option></select></label><label>Posting support<select name="posting_support" required><option value="">Content or posting?</option><option value="Content only">Content only</option><option value="Content plus posting support">Content plus posting support</option></select></label><label>Anything else<textarea name="message" placeholder="Quiet hours, launch dates, or questions"></textarea></label><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><input type="hidden" name="_subject" value="Request a content shoot — Artspectiv Studio"><button type="submit" class="btn primary">Request a content shoot</button><p id="form-status" class="form-status" role="status" aria-live="polite"></p></form><p class="contact-note">Prefer email? <a href="mailto:hello@artspectivstudio.co.uk?subject=Request%20a%20content%20shoot">hello@artspectivstudio.co.uk</a></p></div></section>
+<section id="contact" class="reveal"><div class="wrap"><div class="final-cta"><p class="kicker">Next step</p><h2>Want your business to look better online within one shoot?</h2><p class="intro contact-lead">Tell me your business name, Instagram handle, and whether you need content only or content plus posting support.</p><p class="contact-outcome">One shoot. One content bank. Reply within 1 to 2 days.</p><form id="enquiry-form" class="enquiry-form" method="POST" action=""><label>Business name<input type="text" name="business_name" required autocomplete="organization"></label><label>Instagram handle<input type="text" name="instagram" placeholder="@yourbusiness" autocomplete="off"></label><label>Package interest<select name="package_interest" required><option value="">Select a package</option><option value="Starter Content Shoot">Starter Content Shoot (from £445)</option><option value="Monthly Content Bank">Monthly Content Bank (from £945)</option><option value="Campaign Content Day">Campaign Content Day (from £1,595)</option><option value="Not sure yet">Not sure yet</option></select></label><label>Posting support<select name="posting_support" required><option value="">Content or posting?</option><option value="Content only">Content only</option><option value="Content plus posting support">Content plus posting support</option></select></label><label>Anything else<textarea name="message" placeholder="Quiet hours, launch dates, or questions"></textarea></label><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px"><input type="hidden" name="_subject" value="Request a content shoot — Artspectiv Studio"><button type="submit" class="btn primary">Request a content shoot</button><p id="form-status" class="form-status" role="status" aria-live="polite"></p></form><p class="contact-note">I reply within 1 to 2 business days.</p></div></div></section>
 </main>
 <div class="sticky-cta"><a class="btn primary" href="#contact">Request a content shoot</a></div>
-<footer><div class="wrap">© <span id="year"></span> Artspectiv Studio · Sid · artspectivstudio.co.uk · New Barnet, North London</div></footer>
+<footer><div class="footer-strip"><div class="wrap"><strong>Artspectiv Studio</strong> · Premium local content · New Barnet, North London</div></div><div class="footer-body wrap">© <span id="year"></span> Artspectiv Studio · Sid · artspectivstudio.co.uk · New Barnet, North London</div></footer>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -153,6 +303,26 @@
     const status = document.getElementById('form-status');
     if (!form || !status) return;
 
+    (function preselectPackage() {
+      var params = new URLSearchParams(window.location.search);
+      var pkg = params.get('package');
+      if (!pkg) return;
+      var select = form.querySelector('select[name="package_interest"]');
+      if (!select) return;
+      var map = {
+        starter: 'Starter Content Shoot',
+        monthly: 'Monthly Content Bank',
+        campaign: 'Campaign Content Day'
+      };
+      var value = map[pkg.toLowerCase()] || pkg;
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === value) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    })();
+
     fetch('assets/site-config.json')
       .then(function (r) { return r.ok ? r.json() : {}; })
       .catch(function () { return {}; })
@@ -161,7 +331,7 @@
           form.action = cfg.formAction;
           return;
         }
-        status.textContent = 'Online form is being connected. Please use the email link below for now.';
+        status.textContent = 'Enquiry form is temporarily unavailable. Please try again shortly.';
         form.querySelector('button[type="submit"]').disabled = true;
       });
 
@@ -169,7 +339,7 @@
       if (!form.action) {
         ev.preventDefault();
         status.className = 'form-status err';
-        status.textContent = 'Form not configured yet. Email hello@artspectivstudio.co.uk instead.';
+        status.textContent = 'Enquiry form is not ready yet. Please try again shortly.';
         return;
       }
       ev.preventDefault();
@@ -191,7 +361,7 @@
         })
         .catch(function () {
           status.className = 'form-status err';
-          status.textContent = 'Something went wrong. Email hello@artspectivstudio.co.uk instead.';
+          status.textContent = 'Something went wrong. Please try again in a moment.';
         });
     });
   })();
@@ -200,10 +370,11 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-    revealItems.forEach((item) => item.classList.add('is-visible'));
+    revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+    document.querySelectorAll('.hero-media').forEach(function (el) { el.classList.add('is-loaded'); });
   } else {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           obs.unobserve(entry.target);
@@ -211,7 +382,47 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
 
-    revealItems.forEach((item) => observer.observe(item));
+    revealItems.forEach(function (item) { observer.observe(item); });
+
+    revealItems.forEach(function (item) {
+      var rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.92) item.classList.add('is-visible');
+    });
   }
+
+  (function stickyCtaVisibility() {
+    var bar = document.querySelector('.sticky-cta');
+    var contact = document.getElementById('contact');
+    var heroCta = document.querySelector('.cta-row .btn.primary');
+    if (!bar || !('IntersectionObserver' in window)) return;
+    var mq = window.matchMedia('(min-width:760px)');
+    var heroInView = false;
+    var contactInView = false;
+
+    function syncDisplay() {
+      if (mq.matches) {
+        bar.style.display = 'none';
+        return;
+      }
+      bar.style.display = (heroInView || contactInView) ? 'none' : '';
+    }
+
+    syncDisplay();
+    mq.addEventListener('change', syncDisplay);
+
+    if (heroCta) {
+      new IntersectionObserver(function (entries) {
+        heroInView = entries[0].isIntersecting;
+        syncDisplay();
+      }, { threshold: 0.35 }).observe(heroCta);
+    }
+
+    if (contact) {
+      new IntersectionObserver(function (entries) {
+        contactInView = entries[0].isIntersecting;
+        syncDisplay();
+      }, { threshold: 0.08 }).observe(contact);
+    }
+  })();
 </script>
 </body></html>
